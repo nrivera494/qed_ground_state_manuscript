@@ -1,1 +1,0 @@
-# phonon_polaritons_manuscript
