@@ -119,17 +119,15 @@ Before applying this formalism to a real material and also before discussion of 
 
 \section{Application to bulk materials}
 % calculation basics
-To demonstrate the practical use of this theoretical framework, we present an example bulk calculation for both hBN and the 4H polytype of silicon carbide (SiC), as is shown in Figure 1(a). 
-Phonon bandstructures for SiC and hBN were performed within density functional perturbation
+To demonstrate the practical use of this theoretical framework, we present an example bulk computation for both hBN and the 4H polytype of silicon carbide (SiC), as is shown in Figure 1(a). 
+Phonon bandstructures for SiC and hBN were calculated within density functional perturbation
 theory (DFPT) as implemented in the ABINIT package\cite{abinit1,abinit2,abinit3,Gonze1997dynamical,Hamann2005metric}, with electric field response included to appropriately capture LO-TO splitting. Initial ground state density functional theory (DFT) properties were predicted using norm-conserving Vanderbilt pseudopotentials of the PBEsol parameterization for SiC, and PBE with a D2 (Grimme) van der Waals correction for hBN \cite{PBEsol,PBE,ONCV_PPs,pseudodojo,grimme}. We calculated the phonon modes, their frequencies (shown in Figure 1(b)), and their eigendisplacements at the gamma point to construct the dielectric function from Equation (12), using experimental values for the dissipation rates $\Gamma$. We note that while here, we have taken both the SiC bandgap and the SiC optical phonon lifetime from experiments, these quantities may also be obtained ab-initio by calculating lifetimes associated with electron-phonon scattering and three-phonon decay processes. 
 
 \begin{figure}[t]
-\includegraphics[width=8cm]{structure.png}
+\includegraphics[width=8cm]{sic-structure.pdf}
 \caption{\textbf{Crystal structure and phonon dispersion of 4H silicon carbide.} a) The hexagonal unit cell structure of silicon carbide allows different optical response in the a-b plane and along the c axis. b) The full phonon bandstructure of silicon carbide, from which the phonon eigendisplacements associated with the gamma point were used to calculate the frequency-dependent dielectric function.}
 \label{fig:phonons}
 \end{figure}
-
-
 
 % about the scissor shift -- and a defense sentence in case someone hits us with "semi-empirical" later on
 Additionally, for SiC a scissor shift of 1.01 eV was applied to shift the calculated band gap of 2.26 eV to match the experimental gap of $\sim$3.27 eV \cite{band_gap_expt1,band_gap_expt2}. This is necessary to correct for the well-known underestimation of the band gap in ground state density functional theory calculations and the corresponding effects to the dielectric response. In materials like hBN where excitonic effects play a significant role, the optical properties of the system are not determined solely by the energy associated with band to band recombination, and instead must also account for the exciton binding energy\cite{robert2016excitonic}. 
