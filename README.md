@@ -1,2 +1,2 @@
-# phonon_polaritons
-all things phonon polaritons go here
+# ab-initio qed
+manuscript for variational approach to qed ground states goes here
