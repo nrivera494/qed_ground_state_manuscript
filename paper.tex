@@ -68,7 +68,6 @@ Our results service several aims. First, they suggest a novel variational approa
 
 The outline of this work is as follows: in section I, we develop the variational ansatz for the ground state of the Hamiltonian of macroscopic quantum electrodynamics. In section II, we calculate the ground state energy according to this ansatz for the multi-level and multi-mode Rabi model and compare it to numerical diagonalization of the same problem. In section III, we study the accuracy of our ansatz as a function of the correlation energy in the system, and test several approaches to recover the correlation energy.  We consider both perturbation theory formulated in the interacting modes as well as a self-consistent perturbation theory which allows the perturbative energy shift to influence the modes.
 
-\section{Variational ansatz}
 
 In this work, we consider the light-matter Hamiltonian corresponding to an emitter placed at position $z=d$ in a one-dimensional cavity oriented along the $z$-direction. As the cavity is considered for simplicity to be one-dimensional, the electric field is oriented along a single direction, denoted $x$, while the magnetic field is oriented along a direction transverse to both the electric field and the cavity length, denoted $y$. We consider the interaction in the velocity gauge. The Hamiltonian can then be written as:
 \begin{equation}
@@ -76,13 +75,22 @@ H = H_{\text{matter}}+\frac{\epsilon_0}{2}\int dz~(E^2+c^2B^2)+\frac{e}{m}A(d)p 
 \end{equation}
 The fields can be expressed as a mode expansion via:
 \begin{equation}
-A(z,t) = \sum\limits_{n=1}^{\infty} \sqrt{\frac{\hbar}{\epsilon_0\omega_n L}}\sin\left(\frac{n\pi z}{L}\right)(a_ne^{-i\omega_n t}+a_n^{\dagger}e^{i\omega_n t}),
+A(z,t) = \sum\limits_{n=1}^{\infty} \sqrt{\frac{\hbar}{2\epsilon_0\omega_n }}(F_n(z)a_ne^{-i\omega_n t}+F^*_n(z)a_n^{\dagger}e^{i\omega_n t}),
 \end{equation}
-with $E(z,t) = -\partial_t A(z,t)$ and $B(z,t)=\partial_z A(z,t)$. The mode frequencies of the cavity are $\omega_n = \frac{n\pi c}{L}$. The matter Hamiltonian we take to be a multilevel system with an arbitrary number of levels, $N_a$. The matter system we describe as an $N_a$ site system, perhaps describing a molecule in an LCAO framework. Thus we parameterize the general family of matter Hamiltonians as:
+with $E(z,t) = -\partial_t A(z,t)$ and $B(z,t)=\partial_z A(z,t)$.  The $F_n(z)$ are the mode functions of the cavity, normalized such that $\int dz ~|F_n(z)|^2 = 1$. For a cavity of length $L$ the modes are given by $F_n(z) = \sqrt{\frac{2}{L}}\sin\left(\frac{n\pi z}{L} \right)$ and the corresponding mode frequencies are $\omega_n = \frac{n\pi c}{L}$. The matter Hamiltonian we take to be a multilevel system with an arbitrary number of levels, $N_a$. The matter system we describe as an $N_a$ site system, perhaps describing a molecule in an LCAO framework. Thus we parameterize the general family of matter Hamiltonians as:
 \begin{equation}
 H_{\text{matter}} = \sum\limits_{i=1}^{{N_a-1}} V_i|i\rangle\langle i|+t(|i\rangle\langle i+1|+|i+1\rangle\langle i|) 
 \end{equation}
 
+\section{Variational ansatz}
+
+The concept behind the variational ansatz is shown in Figure (1). We seek a description of the ground state of the system as $\Psi\rangle \approx |\tilde{g}\rangle\otimes|\tilde{0}\rangle + |\delta\rangle,$ where a $\sim$ denotes an effective quantity. In other words, we seek a description in which the state is a factorizable state of matter and photon \textit{quasi}particles, up to some correlations quantified by the state $|\delta\rangle$. These correlations essentially hybridize $|\tilde{g}\rangle\otimes|\tilde{0}\rangle$ with excitations of the effective emitter and virtual effective photons. 
+
+We start our analysis by considering a family of ansatze in which $\delta = 0$ (uncorrelated ansatz).  The expectation value of the Hamiltonian is 
+\begin{align}
+\langle \Psi | H | \Psi \rangle &= \langle \tilde{g} |H_{\text{matter}} | \tilde{g}\rangle \nonumber \\ &+ \frac{\hbar}{4}\int dz ~\sum\limits_{n=1}^{\infty}\left(\omega_n|F_n|^2 - \frac{c^2}{\omega_n}F_n^*\partial_z^2F_n\right) \nonumber \\ &+ \frac{\hbar q^2}{4m\epsilon_0}\sum\limits_{n=1}^{\infty} \int dz~\delta(z-d)|F_n|^2
+\end{align}
+Notably, in this ansatz, the term in the Hamiltonian coupling the momentum of the matter to the photon makes no contribution. We impose constraints of matter normalization and photon mode normalization through Lagrange multipliers $\epsilon_a(\langle \tilde{g}|\tilde{g}\rangle-1)$ and $\frac{\hbar\lambda_n}{2}\left( \int dz~|F_n|^2-1\right)$.
 
 \subsection{Concept: Effectively non-interacting matter and photon systems}
 \begin{figure*}[t]
