@@ -61,22 +61,35 @@
 \maketitle
 
 
-In what follows, we develop a variational ansatz for the ground state of quantum electrodynamical Hamiltonians. In particular, we develop an ansatz in which the ground state can be considered as a factorizable state of an effective matter and effective photon quasiparticle both in their respective ground states. This ansatz, analogous to the Hartree-Fock ansatz, leads to coupled eigen-equations describing the ground-state of the light-matter system. We benchmark our ansatz against a multi-level and multi-mode Rabi model parameterized by the strength of the characteristic momentum matrix elements describing the coupling of the matter and the electromagnetic fields. We find that when the momentum matrix elements are sufficiently weak, our theory finds the ground state energy to a remarkable accuracy of less than 1\% error, even in the non-perturbative strong coupling regime. Even in regimes where the correlation energy is 200\% of the total energy, far outside of the validity domain of our ansatz, our ansatz predicts trends in the evolution of the ground state energy which are not predicted by perturbative analysis. In regimes where our results are accurate, we claim we have found the effective quasiparticle description of the ground state. Moreover, in this regime, the ground state interaction energy manifests itself as the difference in zero-point energies between the quasiparticles and the bare particles. This generalizes the notion of the Casimir energy to a single atom in a cavity.
 
-Our results accomplish several aims. First, they provide a starting point for the description of light-matter systems beyond simple two-level and/or single-mode descriptions. Secondly, they prove a general framework for understanding light-matter decoupling effects in the regime of strong light-matter interactions. Third, they prove a non-perturbative theory of Casimir-Polder forces. Finally, they provide a rigorous concept of correlation energy in quantum electrodynamics in a way analogous to electronic structure theory. 
+In what follows, we develop a variational ansatz for the ground state of quantum electrodynamical Hamiltonians. In particular, we develop an ansatz in which the ground state can be considered as a factorizable state of an effective matter and effective photon quasiparticle both in their respective ground states. This ansatz, analogous to the Hartree-Fock ansatz, leads to coupled eigen-equations describing the ground-state of the light-matter system. We benchmark our ansatz against a multi-level and multi-mode Rabi model parameterized by the strength of the characteristic momentum matrix elements describing the coupling of the matter and the electromagnetic fields. We find that when the momentum matrix elements are sufficiently weak, our theory finds the ground state energy to a remarkable accuracy of less than >99.9\%, even in the non-perturbative coupling regime. Even in regimes where the correlation energy is 50\% of the total energy, far outside of the validity domain of our ansatz, our ansatz predicts the energy up to a few percent. In regimes where our results are accurate, we claim we have found the effective quasiparticle description of the ground state. Moreover, in this regime, the ground state interaction energy manifests itself as the difference in zero-point energies between the quasiparticles and the bare particles. This generalizes the notion of the Casimir energy to a single atom in a cavity.
 
-The outline of this work is as follows: in section I, we develop the variational ansatz for the ground state of the Hamiltonian of macroscopic quantum electrodynamics. In section II, we calculate the ground state energy according to this ansatz for the multi-level and multi-mode Rabi model and compare it to numerical diagonalization of the same problem. In section III, we study the accuracy of our ansatz as a function of the correlation energy in the system, and test several approaches to recover the correlation energy. 
+Our results service several aims. First, they suggest a novel variational approach for understanding ground states in ultra-strongly coupled light-matter systems. Second, they provide a general framework for understanding light-matter decoupling effects in the regime of strong light-matter interactions. Third, they prove a non-perturbative theory of Casimir-Polder forces. Finally, they provide a rigorous concept of correlation energy in quantum electrodynamics in a way analogous to electronic structure theory. 
+
+The outline of this work is as follows: in section I, we develop the variational ansatz for the ground state of the Hamiltonian of macroscopic quantum electrodynamics. In section II, we calculate the ground state energy according to this ansatz for the multi-level and multi-mode Rabi model and compare it to numerical diagonalization of the same problem. In section III, we study the accuracy of our ansatz as a function of the correlation energy in the system, and test several approaches to recover the correlation energy.  We consider both perturbation theory formulated in the interacting modes as well as a self-consistent perturbation theory which allows the perturbative energy shift to influence the modes.
 
 \section{Variational ansatz}
+
+In this work, we consider the light-matter Hamiltonian corresponding to an emitter placed at position $z=d$ in a one-dimensional cavity oriented along the $z$-direction. As the cavity is considered for simplicity to be one-dimensional, the electric field is oriented along a single direction, denoted $x$, while the magnetic field is oriented along a direction transverse to both the electric field and the cavity length, denoted $y$. We consider the interaction in the velocity gauge. The Hamiltonian can then be written as:
+\begin{equation}
+H = H_{\text{matter}}+\frac{\epsilon_0}{2}\int dz~(E^2+c^2B^2)+\frac{e}{m}A(d)p + \frac{q^2}{2m}A^2(d).
+\end{equation}
+The fields can be expressed as a mode expansion via:
+\begin{equation}
+A(z,t) = \sum\limits_{n=1}^{\infty} \sqrt{\frac{\hbar}{\epsilon_0\omega_n L}}\sin\left(\frac{n\pi z}{L}\right)(a_ne^{-i\omega_n t}+a_n^{\dagger}e^{i\omega_n t}),
+\end{equation}
+with $E(z,t) = -\partial_t A(z,t)$ and $B(z,t)=\partial_z A(z,t)$. The mode frequencies of the cavity are $\omega_n = \frac{n\pi c}{L}$. The matter Hamiltonian we take to be a multilevel system with an arbitrary number of levels, $N_a$. The matter system we describe as an $N_a$ site system, perhaps describing a molecule in an LCAO framework. Thus we parameterize the general family of matter Hamiltonians as:
+\begin{equation}
+H_{\text{matter}} = \sum\limits_{i=1}^{{N_a-1}} V_i|i\rangle\langle i|+t(|i\rangle\langle i+1|+|i+1\rangle\langle i|) 
+\end{equation}
+
 
 \subsection{Concept: Effectively non-interacting matter and photon systems}
 \begin{figure*}[t]
 \includegraphics[width=18cm]{conceptfigure.pdf}
-\caption{\textbf{Ground-state ansatz applied to matter in a cavity: effectively decoupled matter and photons.} .}
+\caption{\textbf{Ground-state ansatz applied to matter in a cavity: effectively decoupled matter and photons.} (Left) Bare description of the coupled light-matter ground state in terms of many virtual excitations of the emitter state and the bare cavity photons. (Right) Quasiparticle description of the coupled system as a factorable state an effective emitter in its ground state and the vacuum of an effective photonic degree of freedom.}
 \label{fig:ansatz}
 \end{figure*}
-
-\subsection{Correlation corrections coming from virtual matter and photon quasiparticles}
 
 \section{Application to a multi-level system coupled to a multi-mode cavity}
 
@@ -88,7 +101,7 @@ The outline of this work is as follows: in section I, we develop the variational
 
 \section{Acknowledgements}
 % Pri, Johannes: Please insert any other relevant acknowledgement information here!
-N. R. and J. C. recognize the support of the DOE Computational Science Graduate Fellowship (CSGF) fellowship no.  DE-FG02-97ER25308. P. N. acknowledges start-up funding from the Harvard John A. Paulson School of Engineering and Applied Sciences. %The authors thank XXXX for helpful discussions. Tentatively Joel Yuen Zhou and Javier Aizpurua.
+We thank Joel Yuen-Zhou for useful discussions. N. R. recognizes the support of the DOE Computational Science Graduate Fellowship (CSGF) fellowship no.  DE-FG02-97ER25308. P. N. acknowledges start-up funding from the Harvard John A. Paulson School of Engineering and Applied Sciences. %The authors thank XXXX for helpful discussions. Tentatively Joel Yuen Zhou and Javier Aizpurua.
 
 \bibliographystyle{apsrev4-1}
 \bibliography{references}
