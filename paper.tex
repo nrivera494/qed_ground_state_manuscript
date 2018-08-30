@@ -113,15 +113,22 @@ This is an ordinary second-order differential equation with the conditions that 
 \partial_zF_n\Big|_{z=d^+}-\partial_zF_n\Big|_{z=d^-} = \frac{q^2}{m\epsilon_0 c^2}F_n(d),
 \end{equation}
 in addition to the usual condition of the modes vanishing at the cavity walls $z=0$ and $z=L$. It can be shown that the solution to Equation (7) satisfying such boundary conditions is:
-
-
+\begin{align}
+&\theta (z-d) \left(\frac{\sin\left(\frac{\omega_nL}{c}\right)\sin\left(\frac{\omega_nd}{c}\right)\cos\left(\frac{\omega_nz}{c}\right)}{\sin\left(\frac{\omega_n(L-d)}{c}\right)}-\right) \nonumber \\ 
+-&\theta (z-d) \left(\frac{\cos\left(\frac{\omega_nL}{c}\right)\sin\left(\frac{\omega_nd}{c}\right)\sin\left(\frac{\omega_nz}{c}\right)}{\sin\left(\frac{\omega_n(L-d)}{c}\right)}\right) \nonumber \\ 
++&\theta (d-z) \sin\left(\frac{\omega_n z}{c} \right)
+\end{align}
 provided that the auxiliary condition
 \begin{equation}
 \cot\left(\frac{\omega_n}{c}d \right)+\cot\left(\frac{\omega_n}{c}(L-d) \right) = \frac{q^2}{4m\epsilon_0\omega_nc}
 \end{equation}
-is met. The condition of Equation (9) determines the resonance frequencies of the photon quasiparticle modes. After calculating the modes and the frequencies, we may move to an evaluation of the energy of the ground state. We now show that the energy of the ground state in the interacting light-matter system ($q \neq 0$) is different from the energy of the ground state in the non-interacting system by an amount equal to the difference in zero-point energy between the photon quasiparticle modes and the bare photon modes. 
+is met. To ensure that the modes are normalized according to the constraint, we have that the solutions of Equation (9) must be multiplied by a normalization factor $N_n$ given by
+\begin{equation}
+N_n = 2\sqrt{\frac{c}{\omega_n\left(\frac{\omega_nL}{c}-\sin\left(\frac{\omega_nL}{c}\right) \right)\left(1+\frac{\sin^2\left(\frac{\omega_nd}{c}\right)}{\sin^2\left(\frac{\omega_n(L-d)}{c}\right)} \right)}}.
+\end{equation}
+The condition of Equation (9) determines the resonance frequencies of the photon quasiparticle modes. After calculating the modes and the frequencies, we may move to an evaluation of the energy of the ground state. We proceed by taking the solutions of Equation (9), normalized with the normalization factor of Equation (11), and plugging it back into the expectation value of the Hamiltonian of the ground state (Equation (4))
 
-The result just derived establishes that the interaction energy within this ansatz is nothing more than the Casimir energy of the system.
+We now show that the energy of the ground state in the interacting light-matter system ($q \neq 0$) is different from the energy of the ground state in the non-interacting system by an amount equal to the difference in zero-point energy between the photon quasiparticle modes and the bare photon modes.  The result just derived establishes that the interaction energy within this ansatz is the Casimir energy of the system. This is quite interesting as typically when one calculates a Casimir energy, what is calculated is the zero-point energy associated with the electromagnetic modes of \textit{macroscopic polarizable objects}. Here on the other hand, we consider the \textit{electromagnetic modes of a single atom in a cavity}.
 
 \section{Application to a multi-level system coupled to a multi-mode cavity}
 
