@@ -45,7 +45,7 @@
 
 \begin{document}
 
-\title{Variational theory ground states in quantum electrodynamics}
+\title{Variational theory of the ground state of quantum electrodynamics}
 
 \author{Nicholas Rivera$^\perp$}\email{nrivera@seas.harvard.edu}\affiliation{\HarvardSEAS}\affiliation{\MITPhy}
 \author{Johannes Flick}\email{flick@g.harvard.edu}\affiliation{\HarvardSEAS}
@@ -55,12 +55,12 @@
 \date{\today}
 
 \begin{abstract}
-
+In this work, we develop a variational theory of the ground state of a quantum electrodynamical system of coupled light and matter. Essential to our ansatz is the notion an effective photonic vacuum. As a first step towards an eventually \textit{ab initio} approach to ground states in QED, we apply our ansatz to a Rabi model involving a multi-level emitter with many optical modes, a model which cannot be analytically solved. We find a compact semi-analytic formula which describes the ground state energy very accurately in all regimes of coupling parameters.
 \end{abstract}
 
 \maketitle
 
-
+The past decade has brought an explosion of effort and experimental progress in realizing the coupling of matter and quantized electromagnetic fields beyond a regime of weak coupling, in which perturbative treatments can accurately describe the dynamics. 
 
 In what follows, we develop a variational ansatz for the ground state of quantum electrodynamical Hamiltonians. In particular, we develop an ansatz in which the ground state can be considered as a factorizable state of an effective matter and effective photon quasiparticle both in their respective ground states. This ansatz, analogous to the Hartree-Fock ansatz, leads to coupled eigen-equations describing the ground-state of the light-matter system. We benchmark our ansatz against a multi-level and multi-mode Rabi model parameterized by the strength of the characteristic momentum matrix elements describing the coupling of the matter and the electromagnetic fields. We find that when the momentum matrix elements are sufficiently weak, our theory finds the ground state energy to a remarkable accuracy of less than >99.9\%, even in the non-perturbative coupling regime. Even in regimes where the correlation energy is 50\% of the total energy, far outside of the validity domain of our ansatz, our ansatz predicts the energy up to a few percent. In regimes where our results are accurate, we claim we have found the effective quasiparticle description of the ground state. Moreover, in this regime, the ground state interaction energy manifests itself as the difference in zero-point energies between the quasiparticles and the bare particles. This generalizes the notion of the Casimir energy to a single atom in a cavity.
 
@@ -81,6 +81,15 @@ with $E(z,t) = -\partial_t A(z,t)$ and $B(z,t)=\partial_z A(z,t)$.  The $F_n(z)$
 \begin{equation}
 H_{\text{matter}} = \sum\limits_{i=1}^{{N_a-1}} V_i|i\rangle\langle i|+t(|i\rangle\langle i+1|+|i+1\rangle\langle i|) 
 \end{equation}
+The momentum operator, we write in a finite-different representation as
+\begin{equation}
+p = \frac{i}{R}\sum\limits_{i=1}^{N_a-1} \left(|i\rangle\langle i+1|-|i+1\rangle\langle i| \right),
+\end{equation}
+where $R$ is a constant with units of length representing roughly the difference in positions between sites. This physical interpretation however is rough: it is also a function of the hopping elements $t$, because we choose $R$ in this work such that the following sum rule is enforced:
+\begin{equation}
+\frac{2}{m}\sum\limits_{i=2}^{N_a}\frac{|p_{ig}|^2}{E_i - E_a} = 1,
+\end{equation}
+which is the Thomas-Reiche-Kuhn sum rule. Of course, this sum rule does not rigorously apply to a discrete-level system. However, the matrix elements and energy levels of a few-level approximated Hamiltonian  are derived from an underlying real-space (infinite dimensional) Hamiltonian, a discrete system which has  $\frac{2}{m}\sum\limits_{i=2}^{N_a}\frac{|p_{ig}|^2}{E_i - E_a} > 1$ cannot. As we shall show later in the text however, it does place a bound on how strong the effect of the $Ap$ term can be on the total energy. The net effect is that the value of $R$ we choose is on the order of $\sqrt{\frac{\hbar}{2mt}}$.
 
 \section{Variational ansatz}
 \begin{figure*}[t]
@@ -89,7 +98,7 @@ H_{\text{matter}} = \sum\limits_{i=1}^{{N_a-1}} V_i|i\rangle\langle i|+t(|i\rang
 \label{fig:ansatz}
 \end{figure*}
 
-The concept behind the variational ansatz is shown in Figure (1). We seek a description of the ground state of the system as $\Psi\rangle \approx |\tilde{g}\rangle\otimes|\tilde{0}\rangle + |\delta\rangle,$ where a $\sim$ denotes an effective quantity. In other words, we seek a description in which the state is a factorizable state of matter and photon \textit{quasi}particles, up to some correlations quantified by the state $|\delta\rangle$. These correlations essentially hybridize $|\tilde{g}\rangle\otimes|\tilde{0}\rangle$ with excitations of the effective emitter and virtual effective photons. 
+The concept behind the variational ansatz is shown in Figure (1). We seek a description of the ground state of the system as $|\Psi\rangle \approx |\tilde{g}\rangle\otimes|\tilde{0}\rangle + |\delta\rangle,$ where a $\sim$ denotes an effective quantity. In other words, we seek a description in which the state is a factorizable state of matter and photon \textit{quasi}particles, up to some correlations quantified by the state $|\delta\rangle$. These correlations essentially hybridize $|\tilde{g}\rangle\otimes|\tilde{0}\rangle$ with excitations of the effective emitter and virtual effective photons. 
 
 We start our analysis by considering a family of ansatze in which $\delta = 0$ (uncorrelated ansatz).  The expectation value of the Hamiltonian is 
 \begin{align}
@@ -126,13 +135,15 @@ is met. To ensure that the modes are normalized according to the constraint, we 
 \begin{equation}
 N_n = 2\sqrt{\frac{c}{\omega_n\left(\frac{\omega_nL}{c}-\sin\left(\frac{\omega_nL}{c}\right) \right)\left(1+\frac{\sin^2\left(\frac{\omega_nd}{c}\right)}{\sin^2\left(\frac{\omega_n(L-d)}{c}\right)} \right)}}.
 \end{equation}
-The condition of Equation (9) determines the resonance frequencies of the photon quasiparticle modes. After calculating the modes and the frequencies, we may move to an evaluation of the energy of the ground state. We proceed by taking the solutions of Equation (9), normalized with the normalization factor of Equation (11), and plugging it back into the expectation value of the Hamiltonian of the ground state (Equation (4))
-
-We now show that the energy of the ground state in the interacting light-matter system ($q \neq 0$) is different from the energy of the ground state in the non-interacting system by an amount equal to the difference in zero-point energy between the photon quasiparticle modes and the bare photon modes.  The result just derived establishes that the interaction energy within this ansatz is the Casimir energy of the system. This is quite interesting as typically when one calculates a Casimir energy, what is calculated is the zero-point energy associated with the electromagnetic modes of \textit{macroscopic polarizable objects}. Here on the other hand, we consider the \textit{electromagnetic modes of a single atom in a cavity}.
+The condition of Equation (9) determines the resonance frequencies of the photon quasiparticle modes. After calculating the modes and the frequencies, we may move to an evaluation of the energy of the ground state. We proceed by taking the solutions of Equation (9), normalized with the normalization factor of Equation (11), and plugging it back into the expectation value of the Hamiltonian of the ground state (Equation (4)). After plugging in the quasiparticle photon modes into Equation (4), we find that
+\begin{equation}
+\langle \Psi | H|\Psi\rangle = E_{g}+\frac{1}{2}\sum\limits_{n=1}^{\infty}\hbar\omega_n.
+\end{equation}
+The interaction energy, which is the difference between the ground state energy with $q\neq 0$ and the non-interacting ground state energy, is $\frac{1}{2}\sum\limits_{n=1}^{\infty}\hbar(\omega_n-\omega_n^0)$, where $\omega_n^0 = \frac{n\pi c}{L}$ are the frequencies of the bare cavity modes. The result just derived establishes that the interaction energy within this ansatz is the Casimir energy of the system. This is quite interesting as typically when one calculates a Casimir energy, what is calculated is the zero-point energy associated with the electromagnetic modes of \textit{macroscopic polarizable objects}. Here on the other hand, we consider the \textit{electromagnetic modes of a single atom in a cavity}.
 
 \section{Application to a multi-level system coupled to a multi-mode cavity}
 
-\section{Strategies for recovering the correlation energy}
+%\section{Strategies for recovering the correlation energy}
 
 \section{Outlook}
 
