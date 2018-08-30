@@ -45,7 +45,7 @@
 
 \begin{document}
 
-\title{Variational theory of the ground state of cavity quantum electrodynamics}
+\title{Variational theory ground states in quantum electrodynamics}
 
 \author{Nicholas Rivera$^\perp$}\email{nrivera@seas.harvard.edu}\affiliation{\HarvardSEAS}\affiliation{\MITPhy}
 \author{Johannes Flick}\email{flick@g.harvard.edu}\affiliation{\HarvardSEAS}
@@ -77,27 +77,51 @@ The fields can be expressed as a mode expansion via:
 \begin{equation}
 A(z,t) = \sum\limits_{n=1}^{\infty} \sqrt{\frac{\hbar}{2\epsilon_0\omega_n }}(F_n(z)a_ne^{-i\omega_n t}+F^*_n(z)a_n^{\dagger}e^{i\omega_n t}),
 \end{equation}
-with $E(z,t) = -\partial_t A(z,t)$ and $B(z,t)=\partial_z A(z,t)$.  The $F_n(z)$ are the mode functions of the cavity, normalized such that $\int dz ~|F_n(z)|^2 = 1$. For a cavity of length $L$ the modes are given by $F_n(z) = \sqrt{\frac{2}{L}}\sin\left(\frac{n\pi z}{L} \right)$ and the corresponding mode frequencies are $\omega_n = \frac{n\pi c}{L}$. The matter Hamiltonian we take to be a multilevel system with an arbitrary number of levels, $N_a$. The matter system we describe as an $N_a$ site system, perhaps describing a molecule in an LCAO framework. Thus we parameterize the general family of matter Hamiltonians as:
+with $E(z,t) = -\partial_t A(z,t)$ and $B(z,t)=\partial_z A(z,t)$.  The $F_n(z)$ are the mode functions of the cavity, normalized such that $\int dz ~|F_n(z)|^2 = 1$. For a cavity of length $L$ the modes are given by $F_n(z) = \sqrt{\frac{2}{L}}\sin\left(\frac{n\pi z}{L} \right)$ and the corresponding mode frequencies are $\omega_n = \frac{n\pi c}{L}$. The matter Hamiltonian we take to be a multilevel system with an arbitrary number of levels, $N_a$. The matter system we describe as an $N_a$ site system. This could be considered as a simple model of a molecule within a tight-binding description. Thus we parameterize the general family of matter Hamiltonians as:
 \begin{equation}
 H_{\text{matter}} = \sum\limits_{i=1}^{{N_a-1}} V_i|i\rangle\langle i|+t(|i\rangle\langle i+1|+|i+1\rangle\langle i|) 
 \end{equation}
 
 \section{Variational ansatz}
+\begin{figure*}[t]
+\includegraphics[width=16cm]{conceptfigure.pdf}
+\caption{\textbf{Ground-state ansatz applied to matter in a cavity: effectively decoupled matter and photons.} (Left) Bare description of the coupled light-matter ground state in terms of many virtual excitations of the emitter state and the bare cavity photons. (Right) Quasiparticle description of the coupled system as a factorable state an effective emitter in its ground state and the vacuum of an effective photonic degree of freedom.}
+\label{fig:ansatz}
+\end{figure*}
 
 The concept behind the variational ansatz is shown in Figure (1). We seek a description of the ground state of the system as $\Psi\rangle \approx |\tilde{g}\rangle\otimes|\tilde{0}\rangle + |\delta\rangle,$ where a $\sim$ denotes an effective quantity. In other words, we seek a description in which the state is a factorizable state of matter and photon \textit{quasi}particles, up to some correlations quantified by the state $|\delta\rangle$. These correlations essentially hybridize $|\tilde{g}\rangle\otimes|\tilde{0}\rangle$ with excitations of the effective emitter and virtual effective photons. 
 
 We start our analysis by considering a family of ansatze in which $\delta = 0$ (uncorrelated ansatz).  The expectation value of the Hamiltonian is 
 \begin{align}
-\langle \Psi | H | \Psi \rangle &= \langle \tilde{g} |H_{\text{matter}} | \tilde{g}\rangle \nonumber \\ &+ \frac{\hbar}{4}\int dz ~\sum\limits_{n=1}^{\infty}\left(\omega_n|F_n|^2 - \frac{c^2}{\omega_n}F_n^*\partial_z^2F_n\right) \nonumber \\ &+ \frac{\hbar q^2}{4m\epsilon_0}\sum\limits_{n=1}^{\infty} \int dz~\delta(z-d)|F_n|^2
+\langle \Psi | H | \Psi \rangle &= \langle \tilde{g} |H_{\text{matter}} | \tilde{g}\rangle \nonumber \\ &+ \frac{\hbar}{4}\int dz ~\sum\limits_{n=1}^{\infty}\left(\omega_n|F_n|^2 - \frac{c^2}{\omega_n}F_n^*\partial_z^2F_n\right) \nonumber \\ &+ \frac{\hbar q^2}{4m\epsilon_0\omega_n}\sum\limits_{n=1}^{\infty} \int dz~\delta(z-d)|F_n|^2
 \end{align}
-Notably, in this ansatz, the term in the Hamiltonian coupling the momentum of the matter to the photon makes no contribution. We impose constraints of matter normalization and photon mode normalization through Lagrange multipliers $\epsilon_a(\langle \tilde{g}|\tilde{g}\rangle-1)$ and $\frac{\hbar\lambda_n}{2}\left( \int dz~|F_n|^2-1\right)$.
+Notably, in this ansatz, the term in the Hamiltonian coupling the momentum of the matter to the photon makes no contribution. We impose constraints of matter normalization and photon mode normalization by defining a Lagrange function $\mathcal{L} \equiv \langle \Psi | H | \Psi \rangle - \epsilon(\langle \tilde{g}|\tilde{g}\rangle-1)-\sum\limits_{n=1}^{\infty}\frac{\hbar\lambda_n}{2}\left( \int dz~|F_n|^2-1\right)$. To find the ground state, we minimize the Lagrange function with respect to the matter orbital $|\tilde{g}\rangle$ and with respect to the mode functions $F_n$. The minimization with respect to the matter leads to the trivial equation $H_{\text{matter}} |\tilde{g}\rangle = \epsilon|\tilde{g}\rangle$ which leaves the effective matter ground state as simply the ground state of $H_{\text{matter}}$. On the other hand, the minimization with respect to the photon mode functions leads to  the equation
+\begin{equation}
+\left(\partial_z^2-\frac{\omega^2_n}{c^2}+2\frac{\omega_n\lambda_n}{c^2}-\frac{q^2 }{m\epsilon_0 c^2}\delta(z-d)\right)F_n  = 0.
+\end{equation}
+We may constrain $\lambda$ by differentiating the Lagrange function also with respect to the $\omega_n$. The equation which follows is:
+\begin{equation}
+\int dz ~\left(|F_n|^2 + \frac{c^2}{\omega^2_n}F_n^*\partial_z^2F_n\right) - \frac{ q^2}{m\epsilon_0\omega^2_n} \int dz~\delta(z-d)|F_n|^2 = 0
+\end{equation}
+Performing $\frac{\omega_n^2}{c^2}\int dz~F_n^*$ on both sides of Equation (5), and adding this equation to Equation (6), one immediately finds that $\lambda_n = \omega_n$ and that
+\begin{equation}
+\left(\partial_z^2+\frac{\omega^2_n}{c^2}-\frac{q^2 }{m\epsilon_0 c^2}\delta(z-d)\right)F_n  = 0.
+\end{equation}
 
-\subsection{Concept: Effectively non-interacting matter and photon systems}
-\begin{figure*}[t]
-\includegraphics[width=18cm]{conceptfigure.pdf}
-\caption{\textbf{Ground-state ansatz applied to matter in a cavity: effectively decoupled matter and photons.} (Left) Bare description of the coupled light-matter ground state in terms of many virtual excitations of the emitter state and the bare cavity photons. (Right) Quasiparticle description of the coupled system as a factorable state an effective emitter in its ground state and the vacuum of an effective photonic degree of freedom.}
-\label{fig:ansatz}
-\end{figure*}
+This is an ordinary second-order differential equation with the conditions that $F_n$ is continuous at $d$ and that its derivative is discontinuous according to 
+\begin{equation}
+\partial_zF_n\Big|_{z=d^+}-\partial_zF_n\Big|_{z=d^-} = \frac{q^2}{m\epsilon_0 c^2}F_n(d),
+\end{equation}
+in addition to the usual condition of the modes vanishing at the cavity walls $z=0$ and $z=L$. It can be shown that the solution to Equation (7) satisfying such boundary conditions is:
+
+
+provided that the auxiliary condition
+\begin{equation}
+\cot\left(\frac{\omega_n}{c}d \right)+\cot\left(\frac{\omega_n}{c}(L-d) \right) = \frac{q^2}{4m\epsilon_0\omega_nc}
+\end{equation}
+is met. The condition of Equation (9) determines the resonance frequencies of the photon quasiparticle modes. After calculating the modes and the frequencies, we may move to an evaluation of the energy of the ground state. We now show that the energy of the ground state in the interacting light-matter system ($q \neq 0$) is different from the energy of the ground state in the non-interacting system by an amount equal to the difference in zero-point energy between the photon quasiparticle modes and the bare photon modes. 
+
+The result just derived establishes that the interaction energy within this ansatz is nothing more than the Casimir energy of the system.
 
 \section{Application to a multi-level system coupled to a multi-mode cavity}
 
