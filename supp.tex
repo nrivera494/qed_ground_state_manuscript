@@ -1,0 +1,219 @@
+\documentclass[aps,prb,onecolumn,
+	groupedaddress,superscriptaddress,
+	amsfonts,amssymb,amsmath,floatfix,
+	citeautoscript]{revtex4-1}
+
+\usepackage{graphicx}
+\usepackage[centering,hmargin=20mm,tmargin=30mm,bmargin=25mm]{geometry}
+\usepackage{multirow}
+\usepackage{newtxtext}
+\usepackage[cmintegrals]{newtxmath}
+
+%----- References -----
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{colorlinks,
+	linkcolor={blue!75!black!80!yellow},
+	citecolor={blue!75!black!80!yellow},
+	urlcolor={blue!75!black!80!yellow}
+}
+
+%----- Captions in sans font -----
+\makeatletter
+\renewcommand\@make@capt@title[2]{%
+	\@ifx@empty\float@link{\@firstofone}{\expandafter\href\expandafter{\float@link}}%
+	\sffamily{\textbf{#1}}\@caption@fignum@sep#2
+}%
+\renewcommand\figurename{Fig.}
+\makeatother
+
+\thickmuskip=5mu plus 2mu minus 1mu  %binary relations (default, 5mu plus 5mu)
+\medmuskip=4mu plus 2mu minus 2mu    %binary operations (default, 4mu plus 2mu minus 4mu)
+
+\frenchspacing %Ensure that revTeX does not do "double spaces" after punctuation
+
+\renewcommand{\Im}{\operatorname{Im}}
+\renewcommand{\Re}{\operatorname{Re}}
+\newcommand{\sub}[1]{\ensuremath{_{\textrm{#1}}}} %Upright multi-character subscript
+\newcommand{\super}[1]{\ensuremath{^{\textrm{#1}}}} %Upright multi-character superscript
+
+\newcommand{\HarvardSEAS}{John A. Paulson School of Engineering and Applied Sciences, Harvard University, Cambridge, MA, USA}
+\newcommand{\MITPhy}{Department of Physics, Massachusetts Institute of Technology, Cambridge, MA, USA}
+
+\usepackage[normalem]{ulem}
+\newcommand{\Jadd}[1]{\textcolor{blue}{#1}}
+\newcommand{\Jrem}[1]{\textcolor{blue}{\sout{#1}}}
+
+
+%\usepackage[usenames]{color}
+%\newcommand{\edited}[1]{{\color{red} #1}}
+
+\begin{document}
+
+\title{Supplementary information for: Variational theory of the ground state of quantum electrodynamics}
+
+\author{Nicholas Rivera}\email{nrivera@seas.harvard.edu}\affiliation{\HarvardSEAS}\affiliation{\MITPhy}
+\author{Johannes Flick}\email{flick@seas.harvard.edu}\affiliation{\HarvardSEAS}
+\author{Prineha Narang}\email{prineha@seas.harvard.edu}\affiliation{\HarvardSEAS}
+
+
+\date{\today}
+
+
+\maketitle
+In this supplement, we derive a self-consistent set of equations describing the ground state of a general quantum electrodynamical system with the effect of correlations included. We derive them in the case of a multi-electron system with electron-electron interactions in three spatial dimensions with an arbitrary number of photonic modes. The resulting equations are very similar in spirit to the equations of quantum electrodynamical density functional theory in an optimized-effective potential scheme, except that the orbitals used in that scheme are Kohn-Sham orbitals, while ours essentially are mean-field theory orbitals. The one-dimensional problem studied for concreteness in the main text is a special case of these equations for a single-electron emitter in a finite-dimensional space and in a one-dimensional cavity.
+\section{Equations for the ground state of the coupled light-matter system}
+
+The QED Hamiltonian takes the form:
+\begin{equation}
+H = H_{mat}+H_{em}+H_{int},
+\end{equation}
+where $H_{mat}$ describes the matter in the absence of the quantized electromagnetic field, $H_{em}$ describes the photons in the absence of the matter, and $H_{int}$ describes the coupling between light and matter. The matter Hamiltonian takes the form:
+
+%\begin{align}
+%H_{el} = &\int d^3x ~\psi^{\dagger}(x)\left(-\frac{\hbar^2\nabla^2}{2m} + v_{ext} \right)\psi(x) \nonumber \\ &+ \frac{1}{2}\int d^3x d^3x'~ \psi^{\dagger}(x)\psi^{\dagger}(x')V(x-x')\psi(x')\psi(x),
+%\end{align}
+\begin{equation}
+H_{el} = \int d^3x ~\psi^{\dagger}(x)\left(-\frac{\hbar^2\nabla^2}{2m} + v_{ext} \right)\psi(x) + \frac{1}{2}\int d^3x d^3x'~ \psi^{\dagger}(x)\psi^{\dagger}(x')V(x-x')\psi(x')\psi(x),
+\end{equation}
+where $v_{ext}$ is the one-body potential, $V(x-x')$ is the two-body interaction kernel, and $\psi$ is the second-quantized electron field.
+
+Parameterizing the electromagnetic field purely in terms of a vector potential: $\mathbf{E} = -\partial_t\mathbf{A}$ and $\mathbf{B} = \nabla\times\mathbf{A}$. This renders the free electromagnetic Hamiltonian as
+\begin{equation}
+H_{em} = \int d^3x~ \epsilon (\partial_t \mathbf{A}(x))^2 + \mathbf{A}(x)\cdot(\nabla\times\mu^{-1}\nabla\times\mathbf{A}(x)),
+\end{equation}
+where $\epsilon$ and $\mu$ represent a non-dispersive and positive dielectric and magnetic background that the matter and photon occupy. For cases we consider in this work, these will be taken to be unity, but we leave them here for the sake of generality.
+
+The interaction Hamiltonian takes the form:
+%\begin{align}
+%H_{int} = &\frac{-i\hbar e}{2m}\int d^3x ~\psi^{\dagger}(x)(\mathbf{A}\cdot\nabla +  \nabla \cdot \mathbf{A})\psi(x) + \nonumber \\ &\frac{e^2}{2m}\int d^3x ~\psi^{\dagger}\psi\mathbf{A}^2(x).
+%\end{align}
+\begin{equation}
+H_{int} = \frac{-i\hbar e}{2m}\int d^3x ~\psi^{\dagger}(x)(\mathbf{A}\cdot\nabla +  \nabla \cdot \mathbf{A})\psi(x) + \frac{e^2}{2m}\int d^3x ~\psi^{\dagger}\psi\mathbf{A}^2(x).
+\end{equation}
+
+This Hamiltonian, which depends on the fields $\psi$ and $\mathbf{A}$ can be parameterized in terms of an orthonormal set of electron single-particle wavefunctions $\{\psi_n\}$, and in terms of a set of photonic mode functions $\{\mathbf{F}_i\}$ via mode expansions for the electronic and photonic field operators. The electron field operator takes the form:
+\begin{equation}
+\psi(x) = \sum_n \psi_n(x)c_n.
+\end{equation}
+In this second-quantized description, the $c_n$ is an annihilation operator for an electron corresponding to state $n$. The electromagnetic field operator takes the form
+\begin{equation}
+\mathbf{A}(x) = \sum_i\sqrt{\frac{\hbar}{2\epsilon_0\omega_i}} \left(\mathbf{F}_i(x)a_i+\mathbf{F}^*_i(x)a^{\dagger}_i\right).
+\end{equation}
+In the electromagnetic field operator, we parameterize not only by the mode functions but also by modal frequencies. We have chosen a form for the vector potential operator which mirrors the choice generally adopted in QED. The normalization chosen for the electron wavefunctions is $\int d^3x~ \psi_m^*\psi_n = \delta_{mn}$ while for the photon mode functions, it is $\int d^3x~\epsilon\mathbf{F}_i^*\cdot\mathbf{F}_j = \delta_{ij}.$
+
+With the Hamiltonian set up, we now move to describe a variational theory of the ground state. In the variational theorem, we choose some ansatz $|\Omega\rangle$ for the ground state of $H$. The variational theorem ensures that $\langle \Omega|H|\Omega\rangle$ is an upper bound for the ground state energy. Parameterizing the ground state to generate a family of ground states, and minimizing $\langle \Omega|H|\Omega\rangle$ with respect to the introduced parameters gives the best upper bound for the ground state energy for the chosen family of ground states. 
+
+We choose as our ground state
+\begin{equation}
+|\Omega\rangle = |\psi\rangle \otimes |\phi\rangle,
+\end{equation}
+where
+\begin{equation}
+|\psi\rangle = \prod\limits_n c_n^{\dagger}|0_n\rangle,
+\end{equation}
+and where
+\begin{equation}
+|\phi\rangle = \bigotimes_i|0_i\rangle.
+\end{equation}
+In such an ansatz $|\psi\rangle$ represents a "filled Fermi sea" for effectively non-interacting electrons, and $|\phi\rangle$ represents a "photonic vacuum" for effectively non-interacting photons. Implicitly, this ansatz, once we take the expectation value $\langle \Omega|H|\Omega\rangle$, denotes a family of ansatzes labeled by all the possibilities for the electron wavefunctions and photon mode functions. Thus, we shall minimize the expectational value with respect to $\psi_n, \psi_n^*, \mathbf{F}_i, \mathbf{F}_i^*$, and $\omega_i$. Note that the electromagnetic field gets two sets of (distinct) variational parameters, $\omega_i$ and $\mathbf{F}_i$. Intuitively, this happens because the electromagnetic field is described by an electric and magnetic field, which are related to $\mathbf{F}_i$ and $\partial_t \mathbf{F}_i \rightarrow \omega_i\mathbf{F}_i$.
+
+The last thing to note before taking the expectation values and minimization is that we should focus on the submanifold of variations that keep the complete set of electron and photon functions normalized. This shall be enforced by constructing the Lagrange function:
+\begin{widetext}
+\begin{equation}
+\mathcal{L}[\{ \psi_n,\psi_n^* \},\{ \mathbf{F}_i,\mathbf{F}_i^*,\omega_i \}] = \langle \Omega |H|\Omega\rangle - \sum_n E_n\left(\int d^3x ~\psi_n^*\psi_n - 1 \right) - \sum_n \frac{\hbar\lambda_i}{2}\left(\int d^3x ~\epsilon\mathbf{F}_i^*\cdot\mathbf{F}_i - 1 \right).
+\end{equation}
+\end{widetext}
+
+\subsection{System of equations for the ground state}
+We now proceed with the program of evaluating the expectation value and carrying out the functional minimization with respect to all of the free parameters. 
+
+The minimization with respect to the electron orbital $\psi_i^*$ yields the equation:
+% \begin{widetext}
+% \begin{equation}
+% \left(\frac{\mathbf{p}^2}{2m}+v_{ext}(x) \right)\psi_i(x) +  \sum\limits_{j=1}^N \int d^3x' ~ V(x-x')\left(\psi^*_j(x')\psi_j(x')\psi_i(x) - \psi_j(x')\psi_j(x)\psi_i(x')  \right) + \frac{\hbar e^2}{4m\epsilon_0}\sum_n \frac{1}{\omega_n}|\mathbf{F}_n|^2\psi_i(x)  = E_i\psi_i(x).
+% \end{equation}
+% \end{widetext}
+\begin{align}
+\left(\frac{\mathbf{p}^2}{2m}+v_{ext}(x) \right)\psi_i(x) &+  \sum\limits_{j=1}^N \int d^3x' ~ V(x-x')\left(\psi^*_j(x')\psi_j(x')\psi_i(x) - \psi_j(x')\psi_j(x)\psi_i(x')  \right) \nonumber \\ &+ \frac{\hbar e^2}{4m\epsilon_0}\sum_n \frac{1}{\omega_n}|\mathbf{F}_n|^2\psi_i(x)  = E_i\psi_i(x).
+\end{align}
+This differs from the usual Hartree-Fock equation of electronic theory by the last term on the left-hand-side, representing a polarization induced by the $\mathbf{A}^2$ term.
+
+The minimization with respect to the photonic mode function $\mathbf{F}_n^*$ gives:
+\begin{equation}
+\left(\epsilon\omega_n+\frac{e^2\sum_i|\psi_i(x)|^2}{m\epsilon_0\omega_n} \right)\mathbf{F}_n + \frac{c^2}{\omega_n}\nabla\times\mu^{-1}\nabla\times\mathbf{F}_n = 2\lambda_n\omega_n\mathbf{F}_n.
+\end{equation}
+Meanwhile, the minimization with respect to frequency $\omega_n$ gives:
+\begin{equation}
+\int d^3x\left(\epsilon - \frac{e^2\sum_i|\psi_i(x)|^2}{m\epsilon_0\omega^2_n}\right)|\mathbf{F}_n|^2 - \frac{c^2}{\omega_n^2}\mathbf{F}_n^*\cdot\nabla\times\mu^{-1}\nabla\times\mathbf{F}_n=0.
+\end{equation}
+Equations (12) and (13), to be mutually consistent, force $\lambda_n = \omega_n$, reducing Equation (12) to the equivalent form:
+\begin{equation}
+\nabla\times\mu^{-1}\nabla\times\mathbf{F}_n = \left(\epsilon - \frac{\omega_p^2(x)}{\omega_n^2} \right)\mathbf{F}_n,
+\end{equation}
+where $\omega_p \equiv \frac{e^2}{2m\epsilon_0}\sum_n|\psi_n(x)|^2$ is the position-dependent plasma frequency. Notice that taking the divergence of both sides of Equation (14) requires that
+\begin{equation}
+\nabla\cdot\left(\epsilon - \frac{\omega_p^2(x)}{\omega_n^2} \right)\mathbf{F}_n = 0,
+\end{equation}
+which is a statement of Gauss' law for the electric field.
+
+\section{Lamb shift correction to the equations for the quantum electrodynamical ground state}
+
+In the derivation of Equation (11), it is notable that the term linear in the vector potential vanishes. In many quantum electrodynamical problems, this linear term is important. To first order, it leads to spontaneous emission of a photon. To second order, it leads to van der Waals / Casimir-Polder forces on emitters, as well as effective interactions betweeen distinct emitters. Thus, we seek to capture the effect of this term. Physically, this term will mix the factorizable ground state of Equation (7) with terms that have virtual excitations of the matter, as well as virtual excitations of the electromagnetic field. The resulting state is now non-factorizable and we thus conclude that the term in the Hamiltonian linear in the vector potential leads to \textit{correlations} in the system, and contributes wholly at lowest order to the correlation energy of the quantum electrodynamical ground state.
+
+We capture the effect of correlations perturbatively. In other words, we consider the second-order correction $\delta E$ to the ground state energy arising from the term in the Hamiltonian linear in the vector potential. That correction is given by
+\begin{equation}
+\delta E = \frac{e^2\hbar^2}{8m^2\epsilon_0}\sum\limits_{q=1}^{N_p}\sum_{m=N_{\sigma}+1}^{\infty}\sum\limits_{1}^{N_{\sigma}} \frac{\Big| \int d^3x~\mathbf{F}_q^*\cdot\mathbf{j}_{nm}\Big|^2}{\omega_q(\omega_{mn} -\lambda_q)},
+\end{equation}
+where $\mathbf{j}_{nm} = \psi^*_n\nabla\psi_m - (\nabla\psi^*_n)\psi_m$,$\omega_{mn} = \omega_m - \omega_n$, $N_{\sigma}$ is the number of occupied orbitals, equal to the number of electrons (divided by 2 if spin is retained), and $N_p$ is the number of photon modes retained.  In a method without self-consistency, the electron and photon orbitals and eigenvalues are those obtained from Equations (11) and (14), and then all the information necessary to calculate the correlation energy is present. In what follows, we add this energy correction $\delta E$ to the expectation value of the energy in the ground state, with the orbitals and eigenvalues as variational parameters. As a result, the orbitals and eigenvalues obtained will be different from Equation (11) and (14), and this difference will be small in the limit of weak correlations. Strictly speaking, this approach is only justified for weak correlations, but can be applied to systems with strong-correlations as is often done with self-consistent methods. 
+
+\subsection{Physics contained in these equations}
+
+As the equations which will result from this new expectation value of the energy will be quite complicated, it is useful to discuss what physics should contained by introducing $\delta E$. From the standpoint of the electrons, the equation for them should differ from Equation (11) by a term which is proportional to the Casimir-Polder, or van der Waals, potential that the electrons feel.  These potentials can also be thought of as Lamb shifts due to the QED coupling. It is well-known that this potential depends on all occupied and unoccupied electron orbitals and the photon orbitals, as well as their respective eigenvalues. In the equation we will derive for the electron orbitals and their energies, there should be a new term relative to Equation (11) which is simply this potential but with self-consistent electron and photon orbitals and energies.
+
+For the photon, the equation will differ from Equation (14) by the introduction of a new term which has the appearance of a source term proportional to a sum over the transition current densities of the electronic system, $\mathbf{j}_{nm}$. The weight of these transition current densities will be proportional to the coupling between the current densities and the photonic orbital. In other words, this new term expresses a coupling of fields to fluctuating currents associated with the ground state of the QED system. 
+
+In the next section, we derive the equations implied by the correction to the energy of Equation (16) and confirm the physical understanding presented in the previous two paragraphs.
+
+\subsection{Equations for the ground state of quantum electrodynamics}
+
+The derivative of $\delta E$ with respect to an occupied electron orbital $k$ is given by
+\begin{equation}
+\frac{\partial\delta E}{\partial \psi_k^*} = \frac{e^2\hbar^2}{8m^2\epsilon_0}\sum\limits_{n=N_{\sigma}+1}^{\infty}\sum\limits_{q=1}^{N_p} \frac{\int d^3y~\mathbf{F}^*_q(\mathbf{y})\cdot\mathbf{j}_{nk}(\mathbf{y})}{\omega_q(\omega_{kn}-\lambda_q)}\int d^3x~\left( \mathbf{F}_q(\mathbf{x})\cdot\nabla\psi_n(\mathbf{x}) + \nabla\cdot(\mathbf{F}_q(\mathbf{x})\psi_n(\mathbf{x}))\right)
+\end{equation}
+A similar equation arises for the derivative with respect to an unoccupied electron orbital, except that the summation should now be over unoccupied electron orbitals.
+
+The derivative of $\delta E$ with respect to a photonic orbital $q$ is given by
+\begin{equation}
+\frac{\partial\delta E}{\partial \mathbf{F_q^*}}=\frac{e^2\hbar^2}{8m^2\epsilon_0}\sum\limits_{n=N_{\sigma}+1}^{\infty}\sum\limits_{m=1}^{N_{\sigma}} \frac{\int d^3y~\mathbf{F}_q(\mathbf{y})\cdot \mathbf{j}_{mn}(\mathbf{y})}{\omega_q(\omega_{mn}-\lambda_q)}\mathbf{j}_{nm}.
+\end{equation}
+
+The derivative of $\delta E$ with respect to a photonic frequency $\omega_q$ is given by
+\begin{equation}
+-\frac{e^2\hbar^2}{8m^2\epsilon_0}\sum\limits_{n=N_{\sigma}+1}^{\infty}\sum\limits_{m=1}^{N_{\sigma}}\frac{\Big|\int d^3y~\mathbf{F}_q(\mathbf{y})\cdot\mathbf{j}_{mn}(\mathbf{y})\Big|^2}{\omega_q^2(\omega_{mn}-\lambda_q)}
+\end{equation}
+
+Using these derivatives, Equation (11) now becomes:
+\begin{align}
+&\left(\frac{\mathbf{p}^2}{2m}+v_{ext}(x) \right)\psi_i(x) +  \sum\limits_{j=1}^N \int d^3x' ~ V(x-x')\left(\psi^*_j(x')\psi_j(x')\psi_i(x) - \psi_j(x')\psi_j(x)\psi_i(x')  \right) \nonumber \\ &+ \frac{\hbar e^2}{4m\epsilon_0}\sum_n \frac{1}{\omega_n}|\mathbf{F}_n|^2\psi_i(x) + \frac{e^2\hbar^2}{8m^2\epsilon_0}\sum\limits_{n=N_{\sigma}+1}^{\infty}\sum\limits_{q=1}^{N_p} \frac{\int d^3y~\mathbf{F}^*_q(\mathbf{y})\cdot\mathbf{j}_{ni}(\mathbf{y})}{\omega_q(\omega_{in}-\lambda_q)}\left( \mathbf{F}_q(\mathbf{x})\cdot\nabla\psi_n(\mathbf{x}) + \nabla\cdot(\mathbf{F}_q(\mathbf{x})\psi_n(\mathbf{x}))\right)  = E_i\psi_i(x).
+\end{align}
+
+Meanwhile, the equation derived by setting to zero the derivative with respect to the photonic orbital now becomes:
+\begin{equation}
+\frac{\hbar}{4}\left(\omega_q\mathbf{F}_q + \frac{c^2}{\omega_q}\nabla\times\nabla\times\mathbf{F}_q\right) + \frac{\hbar\sum\limits_{m=1}^{N_{\sigma}}|\psi_m|^2}{4m\epsilon_0\omega_q}+\frac{e^2\hbar^2}{8m^2\epsilon_0}\sum\limits_{n=N_{\sigma}+1}^{\infty}\sum\limits_{m=1}^{\infty}\frac{\int d^3y ~\mathbf{F}_q(\mathbf{y})\cdot\mathbf{j}_{mn}(\mathbf{y})}{\omega_q(\omega_{mn}-\lambda_q)}\mathbf{j}_{nm} = \frac{\hbar\lambda_q}{2}\mathbf{F}_q
+\end{equation}
+
+Setting the derivative with respect to $\omega_q$ to zero gives the equation:
+\begin{equation}
+\frac{\hbar}{4}\left(\int d^3x ~|\mathbf{F}_q|^2 - \frac{c^2}{\omega_q^2}\mathbf{F}^*_q\cdot\nabla\times\nabla\times\mathbf{F}_q \right) - \frac{e^2\hbar}{4m\epsilon_0\omega_q^2}\int d^3x~\sum\limits_{m=1}^{N_{\sigma}} |\psi_m|^2 -\frac{e^2\hbar^2}{8m^2\epsilon_0}\sum\limits_{n=N_{\sigma}+1}^{\infty}\sum\limits_{m=1}^{N_{\sigma}}\frac{\Big|\int d^3x~\mathbf{F}_q\cdot\mathbf{j}_{mn}\Big|^2}{\omega_q^2(\omega_{mn}-\lambda_q)}=  0 
+\end{equation}
+Performing the operation $\frac{1}{\omega_q}\int d^3x \mathbf{F}_q^* \cdot$ on Equation (21), and adding the result to Equation (22), gives the result $\lambda_q = \omega_q$, just as before $\delta E$ was introduced. Using this key simplification, along with the definition of the spatially-dependent plasma frequency as $\omega_p^2 = \frac{e^2}{m\epsilon_0}\sum\limits_{m=1}^{N_p}$, we have that
+\begin{equation}
+\left( \nabla\times\nabla\times - \left(1-\frac{\omega_p^2}{\omega_q^2} \right)\right)\mathbf{F}_q = -\frac{e^2\hbar}{2m^2\epsilon_0c^2}\sum\limits_{n=N_{\sigma}+1}^{\infty}\sum\limits_{m=1}^{N_{\sigma}} \frac{\int d^3y~\mathbf{F}_q(\mathbf{y})\cdot\mathbf{j}_{mn}(\mathbf{y})}{\omega_{mn}-\omega_{q}}\mathbf{j}_{nm}.
+\end{equation}
+Equations (20) and (23), represent main results of this work.
+
+\bibliographystyle{apsrev4-1}
+\bibliography{references}
+
+\end{document}
