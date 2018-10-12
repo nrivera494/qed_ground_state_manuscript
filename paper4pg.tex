@@ -100,12 +100,16 @@ H_{int} &= \frac{-i\hbar e}{2m}\int d^3x ~\psi^{\dagger}(x)(\mathbf{A}(x)\cdot\n
 
 This Hamiltonian, which depends on the fields $\psi$ and $\mathbf{A}$ can be parameterized in terms of an orthonormal set of electron single-particle wavefunctions $\{\psi_n\}$, and in terms of a set of photonic mode functions $\{\mathbf{F}_i\}$ via mode expansions for the electronic and photonic field operators. The electron field operator takes the form $\psi(x) = \sum_n \psi_n(x)c_n$.
 In this second-quantized description, the $c_n$ is an annihilation operator for an electron corresponding to state $n$. The electromagnetic field operator takes the form $\mathbf{A}(x) = \sum_i\sqrt{\frac{\hbar}{2\epsilon_0\omega_i}} \left(\mathbf{F}_i(x)a_i+\mathbf{F}^*_i(x)a^{\dagger}_i\right)$. In the electromagnetic field operator, we parameterize not only by the mode functions but also by modal frequencies. We have chosen a form for the vector potential operator which mirrors the choice generally adopted in QED. The normalization chosen for the electron wavefunctions is $\int d^3x~ \psi_m^*\psi_n = \delta_{mn}$ while for the photon mode functions, it is $\int d^3x~\epsilon\mathbf{F}_i^*\cdot\mathbf{F}_j = \delta_{ij}.$
-
+\begin{figure}[t]
+\includegraphics[width=8.5cm]{conceptfigure.pdf}
+\caption{\textbf{Ground-state ansatz applied to matter in a cavity: effectively decoupled matter and photons.} (Left) Bare description of the coupled light-matter ground state in terms of many virtual excitations of the emitter state and the bare cavity photons. (Right) Quasiparticle description of the coupled system as a factorable state an effective emitter in its ground state and the vacuum of an effective photonic degree of freedom.}
+\label{fig:ansatz}
+\end{figure}
 With the Hamiltonian set up, we now move to describe a variational theory of the ground state. In the variational theorem, we choose some ansatz $|\Omega\rangle$ for the ground state of $H$. The variational theorem ensures that $\langle \Omega|H|\Omega\rangle$ is an upper bound for the ground state energy. Parameterizing the ground state to generate a family of ground states, and minimizing $\langle \Omega|H|\Omega\rangle$ with respect to the introduced parameters gives the best upper bound for the ground state energy for the chosen family of ground states.  We choose as our ansatz
 \begin{equation}
 |\Omega\rangle = \left( \prod\limits_n c_n^{\dagger}|0_n\rangle,\right) \otimes \left(\bigotimes_i|0_i\rangle\right),
 \end{equation}
-In such an ansatz, $\prod\limits_n c_n^{\dagger}|0_n\rangle$ represents a "filled Fermi sea" for effectively non-interacting electrons, and $|\phi\rangle$ represents a "photonic vacuum" for effectively non-interacting photons. Implicitly, this ansatz, once we take the expectation value $\langle \Omega|H|\Omega\rangle$, denotes a family of ansatzes labeled by all the possibilities for the electron wavefunctions and photon mode functions. Thus, we shall minimize the expectational value with respect to $\psi_n, \psi_n^*, \mathbf{F}_i, \mathbf{F}_i^*$, and $\omega_i$. Note that the electromagnetic field gets two sets of (distinct) variational parameters, $\omega_i$ and $\mathbf{F}_i$. The last thing to note before taking the expectation values and minimization is that we should focus on the submanifold of variations that keep the complete set of electron and photon functions normalized. This shall be enforced by constructing the Lagrange function:
+In such an ansatz, $\prod\limits_n c_n^{\dagger}|0_n\rangle$ represents a "filled Fermi sea" for effectively non-interacting electrons, and $|\phi\rangle$ represents a "photonic vacuum" for effectively non-interacting photons (see Figure 1). Implicitly, this ansatz, once we take the expectation value $\langle \Omega|H|\Omega\rangle$, denotes a family of ansatzes labeled by all the possibilities for the electron wavefunctions and photon mode functions. Thus, we shall minimize the expectational value with respect to $\psi_n, \psi_n^*, \mathbf{F}_i, \mathbf{F}_i^*$, and $\omega_i$. Note that the electromagnetic field gets two sets of (distinct) variational parameters, $\omega_i$ and $\mathbf{F}_i$. The last thing to note before taking the expectation values and minimization is that we should focus on the submanifold of variations that keep the complete set of electron and photon functions normalized. This shall be enforced by constructing the Lagrange function:
 \begin{widetext}
 \begin{equation}
 \mathcal{L}[\{ \psi_n,\psi_n^* \},\{ \mathbf{F}_i,\mathbf{F}_i^*,\omega_i \}] = \langle \Omega |H|\Omega\rangle - \sum_n E_n\left(\int d^3x ~\psi_n^*\psi_n - 1 \right) - \sum_n \frac{\hbar\lambda_i}{2}\left(\int d^3x ~\epsilon\mathbf{F}_i^*\cdot\mathbf{F}_i - 1 \right),
@@ -116,11 +120,7 @@ with the $E_n$ and $\lambda_i$ being the Lagrange multipliers that enforce the n
 &\left(\frac{\mathbf{p}^2}{2m}+v_{ext}(x) \right)\psi_i(x) + \nonumber \\ &\sum\limits_{j=1}^N \int d^3x' ~ V(x-x')\psi^*_j(x')\psi_j(x')\psi_i(x) \nonumber \\ & - \sum\limits_{j=1}^N \int d^3x' ~ V(x-x')\psi_j(x')\psi_j(x)\psi_i(x')  \nonumber \\ &+ \frac{\hbar e^2}{4m\epsilon_0}\sum_n \frac{1}{\omega_n}|\mathbf{F}_n|^2\psi_i(x)   = E_i\psi_i(x).
 \end{align}
 for the electron orbitals and energies. One sees that in addition to the one-body and Hartree-Fock terms for the electrons, the effect of the QED coupling is to add a one-body ponderomotive potential. We note that in the often used dipole approximation, the ponderomotive potential has no effect as it becomes independent of position.
-\begin{figure}[t]
-\includegraphics[width=8.5cm]{conceptfigure.pdf}
-\caption{\textbf{Ground-state ansatz applied to matter in a cavity: effectively decoupled matter and photons.} (Left) Bare description of the coupled light-matter ground state in terms of many virtual excitations of the emitter state and the bare cavity photons. (Right) Quasiparticle description of the coupled system as a factorable state an effective emitter in its ground state and the vacuum of an effective photonic degree of freedom.}
-\label{fig:ansatz}
-\end{figure}
+
 For the photon orbitals and energies, the minimization yields:
 \begin{equation}
 \left( \nabla\times\nabla\times - \left(1-\frac{\omega_p^2}{\omega_q^2} \right)\right)\mathbf{F}_q = 0,
