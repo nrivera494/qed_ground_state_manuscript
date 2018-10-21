@@ -129,7 +129,7 @@ where $\omega_p^2 = \frac{e^2}{m\epsilon_0}\sum\limits_{n=1}^N |\psi_n(x)|^2$ is
 
 Immediately, one notices that the term in the interaction Hamiltonian linear in the vector potential makes no contribution to the expectation value of the ground state of the energy in this ansatz. To second order, it leads to two (virtual) photon processes, such as van der Waals / Casimir-Polder forces on emitters, two-photon spontaneous emission, and effective interactions betweeen distinct emitters \Jadd{(Nick: here we need citations)}. Thus, we seek to capture the effect of this term. Physically, this term will mix the factorizable ground state of Eq. (5) with states that simultaneously have virtual excitations of the matter and the electromagnetic field. The resulting state is now non-factorizable and we thus conclude that the term in the Hamiltonian linear in the vector potential leads to \textit{correlations} in the system, and contributes wholly at lowest order to the correlation energy of the quantum electrodynamical ground state.
 \begin{figure}[t]
-\includegraphics[width=5cm]{figure2new.pdf}
+\includegraphics[width=9cm]{Figure2and3combined.pdf}
 \caption{\textbf{Variational theory of ground and excited states in the ultra-strong coupling regime of QED.} Lowest two eigenvalues as a function of coupling for the multi-mode Rabi model describing the coupling of an emitter to a one-dimensional cavity. The variational results (blue) agree to within roughly a percent with the result derived by numerical diagonalization (orange) retaining up to four photons in the Hilbert space. The result from perturbation theory (green) disagrees strongly with the other methods of calculation for the first excited state due to a near-resonance between the bare transition energy and the bare lowest cavity mode.}
 \label{fig:ansatz}
 \end{figure}
@@ -138,11 +138,11 @@ We capture the effect of correlations perturbatively. In other words, we conside
 \delta E = \frac{e^2\hbar^2}{8m^2\epsilon_0}\sum\limits_{i=1}^{N_p}\sum_{m=N_{\sigma}+1}^{\infty}\sum\limits_{n=1}^{N_{\sigma}} \frac{\Big| \int d^3x~\mathbf{F}_i^*\cdot\mathbf{j}_{nm}\Big|^2}{\omega_i(\omega_{mn} -\omega_i)},
 \end{equation}
 where $\mathbf{j}_{nm} = \psi^*_n\nabla\psi_m - (\nabla\psi^*_n)\psi_m$, $\omega_{mn} = \omega_m - \omega_n$, $N_{\sigma}$ is the number of occupied orbitals, equal to the number of electrons (divided by 2 if spin is retained), and $N_p$ is the number of photon modes retained.  In a method without self-consistency, the electron and photon orbitals and eigenvalues are those obtained from Eqs. (6) and (7), and then the electron energies and orbitals as well as the photon frequencies and orbitals, are plugged into Eq. (8).
-\begin{figure}[t]
-\includegraphics[width=8.4cm]{figure3new.pdf}
-\caption{\textbf{Variational theory of ground state energy: accuracy as a function of number of emitter levels.} (Left) Ground-state energy of the one-dimensional multi-mode Rabi model as a function of the dimensionless coupling for two (top), three (middle), and four (bottom) level emitter systems with momentum matrix elements chosen to saturate the Thomas-Reiche-Kuhn sum rule. (Right) Ratio of the energy calculated with the variational theory and with numerical diagonalization. These results show that our accuracy is robust to the number of levels in the system. }
-\label{fig:ansatz}
-\end{figure}
+%\begin{figure}[t]
+%\includegraphics[width=8.4cm]{figure3new.pdf}
+%\caption{\textbf{Variational theory of ground state energy: accuracy as a function of number of emitter levels.} (Left) Ground-state energy of the one-dimensional multi-mode Rabi model as a function of the dimensionless coupling for two (top), three (middle), and four (bottom) level emitter systems with momentum matrix elements chosen to saturate the Thomas-Reiche-Kuhn sum rule. (Right) Ratio of the energy calculated with the variational theory and with numerical diagonalization. These results show that our accuracy is robust to the number of levels in the system. }
+%\label{fig:ansatz}
+%\end{figure}
 
 In what follows, we provide a proof-of-concept demonstration of the efficiency of the variational theory derived here. We consider the QED Hamiltonian corresponding to a single emitter placed at position $z=d$ in a one-dimensional cavity oriented along the $z$-direction. As the cavity is considered for simplicity to be one-dimensional, the electric field is oriented along a single direction, denoted $x$, while the magnetic field is oriented along a direction transverse to both the electric field and the cavity length, denoted $y$. Working under the long-wavelength or dipole approximation, the Hamiltonian can then be written as:
 \begin{equation}\label{eq:hamiltonian}
@@ -172,22 +172,24 @@ Importantly, the reason perturbation theory fails much more for the first excite
 
 This result very clearly demonstrates not only the accuracy of our ansatz, but provides insight into the mechanisms by which light-matter coupling saturates in the nonperturbative QED regime. Moreover, our results demonstrate a successful non-perturbative theory of the Lamb shift and consequently Casimir-Polder forces. In particular, it is long known that energy levels of emitters can shift as a result of virtual photon emission and re-absorption. These energy shifts, called Lamb shifts, depend on the particular position of the emitter in the photonic structure it is embedded in. These shifts not only lead to changes in the transition frequencies of the emitter, but the position dependence of these energy shifts also implies forces on the emitter, typically called Casimir-Polder forces. Such Casimir-Polder forces are often calculated using the celebrated Lifshitz theory\Jadd{(Nick, cite)}, which is equivalent to a derivation that applies of second-order perturbation theory in the form of Eq. (8) using bare atomic and photonic properties. Thus, our calculations, which find the energy shifts non-perturbatively, lead to a consequently non-perturbative theory of Casimir-Polder forces \Jadd{(Nick, cite)}. 
 
-In Figure 3, we consider the ground state of the QED Hamiltonian, calculated through the procedure above, but now extended to three and four level systems. In all cases, the parameter $R$ is chosen to saturate the TRK sum rule. We find that the accuracy of our approach is not compromised by having additional energy levels in the Hamiltonian, indicating the potential of our approach.
+%In Figure 3, we consider the ground state of the QED Hamiltonian, calculated through the procedure above, but now extended to three and four level systems. In all cases, the parameter $R$ is chosen to saturate the TRK sum rule. We find that the accuracy of our approach is not compromised by having additional energy levels in the Hamiltonian, indicating the potential of our approach.
 
-Finally, we note that Eq. (8), which incorporates correlations, can also be employed self-consistently, by adding it to the Lagrange function of Eq. (5), and minimizing the result with respect to electronic and photonic properties. The set of equations that arise are \Jadd{(Nick, should we remove the argument in F(x) in the following equation?)}:
-%\vspace{-1.5cm}
-\begin{widetext}
-\begin{align}
-&\left(\frac{\mathbf{p}^2}{2m}+v_{ext}(x) \right)\psi_i(x) +  \sum\limits_{j=1}^N \int d^3x' ~ V(x-x')\left(\psi^*_j(x')\psi_j(x')\psi_i(x) - \psi_j(x')\psi_j(x)\psi_i(x')  \right) \nonumber \\ &+ \frac{\hbar e^2}{4m\epsilon_0}\sum_n \frac{1}{\omega_n}|\mathbf{F}_n|^2\psi_i(x) + \frac{e^2\hbar^2}{8m^2\epsilon_0}\sum\limits_{n=N_{\sigma}+1}^{\infty}\sum\limits_{q=1}^{N_p} \frac{\int d^3y~\mathbf{F}^*_q(\mathbf{y})\cdot\mathbf{j}_{ni}(\mathbf{y})}{\omega_q(\omega_{in}-\lambda_q)}\left( \mathbf{F}_q(\mathbf{x})\cdot\nabla\psi_n(\mathbf{x}) + \nabla\cdot(\mathbf{F}_q(\mathbf{x})\psi_n(\mathbf{x}))\right)  = E_i\psi_i(x).
-\end{align}
-\end{widetext}
+%Finally, we note that Eq. (8), which incorporates correlations, can also be employed self-consistently, by adding it to the Lagrange function of Eq. (5), and minimizing the result with respect to electronic and photonic properties. The set of equations that arise are \Jadd{(Nick, should we remove the argument in F(x) in the following equation?)}:
+%%\vspace{-1.5cm}
+%\begin{widetext}
+%\begin{align}
+%&\left(\frac{\mathbf{p}^2}{2m}+v_{ext}(x) \right)\psi_i(x) +  \sum\limits_{j=1}^N \int d^3x' ~ V(x-x')\left(\psi^*_j(x')\psi_j(x')\psi_i(x) - \psi_j(x')\psi_j(x)\psi_i(x')  \right) \nonumber \\ &+ \frac{\hbar e^2}{4m\epsilon_0}\sum_n \frac{1}{\omega_n}|\mathbf{F}_n|^2\psi_i(x) + \frac{e^2\hbar^2}{8m^2\epsilon_0}\sum\limits_{n=N_{\sigma}+1}^{\infty}\sum\limits_{q=1}^{N_p} \frac{\int d^3y~\mathbf{F}^*_q(\mathbf{y})\cdot\mathbf{j}_{ni}(\mathbf{y})}{\omega_q(\omega_{in}-\lambda_q)}\left( \mathbf{F}_q(\mathbf{x})\cdot\nabla\psi_n(\mathbf{x}) + \nabla\cdot(\mathbf{F}_q(\mathbf{x})\psi_n(\mathbf{x}))\right)  = E_i\psi_i(x).
+%\end{align}
+%\end{widetext}
+%
+%\begin{widetext}
+%\begin{equation}
+%\left( \nabla\times\nabla\times - \left(1-\frac{\omega_p^2}{\omega_q^2} \right)\right)\mathbf{F}_q = -\frac{e^2\hbar}{2m^2\epsilon_0c^2}\sum\limits_{n=N_{\sigma}+1}^{\infty}\sum\limits_{m=1}^{N_{\sigma}} \frac{\int d^3y~\mathbf{F}_q(\mathbf{y})\cdot\mathbf{j}_{mn}(\mathbf{y})}{\omega_{mn}-\omega_{q}}\mathbf{j}_{nm}.
+%\end{equation}
+%\end{widetext}
+%Eqs. (13) and (14) are quite general, providing real-space information about the electronic and photonic properties of the QED ground state for a many-electron system in a many-mode system in three dimensions. 
 
-\begin{widetext}
-\begin{equation}
-\left( \nabla\times\nabla\times - \left(1-\frac{\omega_p^2}{\omega_q^2} \right)\right)\mathbf{F}_q = -\frac{e^2\hbar}{2m^2\epsilon_0c^2}\sum\limits_{n=N_{\sigma}+1}^{\infty}\sum\limits_{m=1}^{N_{\sigma}} \frac{\int d^3y~\mathbf{F}_q(\mathbf{y})\cdot\mathbf{j}_{mn}(\mathbf{y})}{\omega_{mn}-\omega_{q}}\mathbf{j}_{nm}.
-\end{equation}
-\end{widetext}
-Eqs. (13) and (14) are quite general, providing real-space information about the electronic and photonic properties of the QED ground state for a many-electron system in a many-mode system in three dimensions. With the advent of ultra-strong coupling and deep-strong coupling in QED systems, we could in the future use this non-perturbative real-space knowledge of how matter affect photons to design a photonic mode atom-by-atom.
+With the advent of ultra-strong coupling and deep-strong coupling in QED systems, we could in the future use this non-perturbative real-space knowledge of how matter affect photons to design a photonic mode atom-by-atom.
 
 %In summary, we have developed a variational approximation to the ground state of quantum electrodynamical problems and have benchmarked it against the multi-mode and multi-level Rabi model, which has no analytical solutions, and whose accurate numerical diagonalization requires a very high-dimensional Hilbert space. Despite our ansatz being centered on the assumption of weak correlations, with correlations from the $Ap$ term being treated perturbatively, we find that our approximation does very well in predicting the ground state energy, even when the strength of the correlations saturates the TRK sum rule.  
 
