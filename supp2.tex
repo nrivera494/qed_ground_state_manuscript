@@ -119,6 +119,53 @@ Performing the operation $\frac{1}{\omega_q}\int d^3x \mathbf{F}_q^* \cdot$ on E
 \end{equation}
 Equations (20) and (23), represent main results of this work.
 
+\section{Derivation of results for one-dimensional cavity model in the main text}
+
+We seek a description of the ground state of the system as $|\Psi\rangle \approx |\tilde{g}\rangle\otimes|\tilde{0}\rangle + |\delta\rangle,$ where a $\sim$ denotes an effective quantity. In other words, we seek a description in which the state is a factorizable state of matter and photon \textit{quasi}particles, up to some correlations quantified by the state $|\delta\rangle$. These correlations essentially hybridize $|\tilde{g}\rangle\otimes|\tilde{0}\rangle$ with excitations of the effective emitter and virtual effective photons. 
+
+We start our analysis by considering a family of ansatze in which $\delta = 0$ (uncorrelated ansatz).  The expectation value of the Hamiltonian is %\Jadd{(the matter part is assumed to be a single atom, we could use the density here.)}
+\begin{align}\label{eq:expectation_val1}
+\langle \Psi | H | \Psi \rangle &= \langle \tilde{g} |H_{\text{matter}} | \tilde{g}\rangle \nonumber \\ &+ \frac{\hbar}{4}\int dz ~\sum\limits_{n=1}^{\infty}\left(\omega_n|F_n|^2 - \frac{c^2}{\omega_n}F_n^*\partial_z^2F_n\right) \nonumber \\ &+ \frac{\hbar q^2}{4m\epsilon_0\omega_n}\sum\limits_{n=1}^{\infty} \int dz~\delta(z-d)|F_n|^2
+\end{align}
+Notably, in this ansatz, the term in the Hamiltonian coupling the momentum of the matter to the photon makes no contribution. We impose constraints of matter normalization and photon mode normalization by defining a Lagrange function 
+\begin{align}\label{eq:lagrange}
+&\mathcal{L}(\Psi, \Psi^*, \{F_n, F_n^*, \omega_n, \lambda_n\}) \equiv \langle \Psi | H | \Psi \rangle \nonumber \\ &- \epsilon(\langle \tilde{g}|\tilde{g}\rangle-1)-\sum\limits_{n=1}^{\infty}\frac{\hbar\lambda_n}{2}\left( \int dz~|F_n|^2-1\right).
+\end{align} 
+To find the ground state, we minimize the Lagrange function with respect to the matter orbital $|\tilde{g}\rangle$ and with respect to the mode functions $F_n$. The minimization with respect to the matter leads to the trivial equation $H_{\text{matter}} |\tilde{g}\rangle = \epsilon|\tilde{g}\rangle$ which leaves the effective matter ground state as simply the ground state of $H_{\text{matter}}$. On the other hand, the minimization with respect to the photon mode functions leads to  the equation
+\begin{equation}\label{eq:maxwell}
+\left(\partial_z^2-\frac{\omega^2_n}{c^2}+2\frac{\omega_n\lambda_n}{c^2}-\frac{q^2 }{m\epsilon_0 c^2}\delta(z-d)\right)F_n  = 0.
+\end{equation}
+We may constrain the $\lambda_n$ by differentiating the Lagrange function also with respect to the $\omega_n$. The equation which follows is:
+\begin{equation}\label{eq:other_maxwell}
+\int dz ~\left(|F_n|^2 + \frac{c^2}{\omega^2_n}F_n^*\partial_z^2F_n\right) - \frac{ q^2}{m\epsilon_0\omega^2_n} \int dz~\delta(z-d)|F_n|^2 = 0
+\end{equation}
+Performing $\frac{\omega_n^2}{c^2}\int dz~F_n^*$ on both sides of Equation \ref{eq:maxwell}, and adding this equation to Equation \ref{eq:other_maxwell}, one immediately finds that $\lambda_n = \omega_n$ and that
+\begin{equation}\label{eq:final_maxwell}
+\left(\partial_z^2+\frac{\omega^2_n}{c^2}-\frac{q^2 }{m\epsilon_0 c^2}\delta(z-d)\right)F_n  = 0.
+\end{equation}
+
+This is an ordinary second-order differential equation with the conditions that $F_n$ is continuous at $d$ and that its derivative is discontinuous according to 
+\begin{equation}\label{eq:boundary_condition}
+\partial_zF_n\Big|_{z=d^+}-\partial_zF_n\Big|_{z=d^-} = \frac{q^2}{m\epsilon_0 c^2}F_n(d),
+\end{equation}
+in addition to the usual condition of the modes vanishing at the cavity walls $z=0$ and $z=L$. It can be shown that the solution to Equation \ref{eq:final_maxwell} satisfying such boundary conditions is:
+\begin{align}\label{eq:field_mode}
+&\theta (z-d) \left(\frac{\sin\left(\frac{\omega_nL}{c}\right)\sin\left(\frac{\omega_nd}{c}\right)\cos\left(\frac{\omega_nz}{c}\right)}{\sin\left(\frac{\omega_n(L-d)}{c}\right)}-\right) \nonumber \\ 
+-&\theta (z-d) \left(\frac{\cos\left(\frac{\omega_nL}{c}\right)\sin\left(\frac{\omega_nd}{c}\right)\sin\left(\frac{\omega_nz}{c}\right)}{\sin\left(\frac{\omega_n(L-d)}{c}\right)}\right) \nonumber \\ 
++&\theta (d-z) \sin\left(\frac{\omega_n z}{c} \right)
+\end{align}
+provided that the auxiliary condition
+\begin{equation}\label{eq:mode_transcendental}
+\cot\left(\frac{\omega_n}{c}d \right)+\cot\left(\frac{\omega_n}{c}(L-d) \right) = \frac{q^2}{4m\epsilon_0\omega_nc}
+\end{equation}
+is met. To ensure that the modes are normalized according to the constraint, we have that the solutions of Equation \ref{eq:field_mode} must be multiplied by a normalization factor $N_n$ given by
+\begin{equation}\label{eq:mode_normalization}
+N_n = 2\sqrt{\frac{c}{\omega_n\left(\frac{\omega_nL}{c}-\sin\left(\frac{\omega_nL}{c}\right) \right)\left(1+\frac{\sin^2\left(\frac{\omega_nd}{c}\right)}{\sin^2\left(\frac{\omega_n(L-d)}{c}\right)} \right)}}.
+\end{equation}
+The condition of Equation \ref{eq:mode_transcendental} determines the resonance frequencies of the photon quasiparticle modes. \Jadd{(put eq.12-14 to SI?)}
+
+\subsection{Model parameters for Figure 2}
+
 \bibliographystyle{apsrev4-1}
 \bibliography{references}
 
