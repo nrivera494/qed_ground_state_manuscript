@@ -101,7 +101,7 @@ The derivative of $\delta E$ with respect to a photonic frequency $\omega_q$ is 
 
 Using these derivatives, Equation (6) of the main text is generalized to:
 \begin{align}
-&\left(\frac{\mathbf{p}^2}{2m}+v_{ext}(\mathbf{x}) \right)\psi_i(\mathbf{x}) +  \sum\limits_{j=1}^N \int d^3x' ~ V(\mathbf{x}-\mathbf{x}')\left(\psi^*_j(\mathbf{x}')\psi_j(\mathbf{x}')\psi_i(\mathbf{x}) - \psi_j^*(\mathbf{x}')\psi_j(\mathbf{x})\psi_i(\mathbf{x}')  \right) \nonumber \\ &+ \frac{\hbar e^2}{4m\epsilon_0}\sum_n \frac{1}{\omega_n}|\mathbf{F}_n(\mathbf{x})|^2\psi_i(\mathbf{x}) + \frac{e^2\hbar^2}{8m^2\epsilon_0}\sum\limits_{n=N_{\sigma}+1}^{\infty}\sum\limits_{q=1}^{N_p} \frac{\int d^3y~\mathbf{F}^*_q(\mathbf{y})\cdot\mathbf{j}_{ni}(\mathbf{y})}{\omega_q(\omega_{in}-\lambda_q)}\left( \mathbf{F}_q(\mathbf{x})\cdot\nabla\psi_n(\mathbf{x}) + \nabla\cdot(\mathbf{F}_q(\mathbf{x})\psi_n(\mathbf{x}))\right)  = E_i\psi_i(\mathbf{x}).
+&\left(\frac{\mathbf{p}^2}{2m}+v_{ext}(\mathbf{x}) \right)\psi_i(\mathbf{x}) +  \sum\limits_{j=1}^N \int d^3x' ~ V(\mathbf{x}-\mathbf{x}')\left(\psi^*_j(\mathbf{x}')\psi_j(\mathbf{x}')\psi_i(\mathbf{x}) - \psi_j^*(\mathbf{x}')\psi_j(\mathbf{x})\psi_i(\mathbf{x}')  \right) \nonumber \\ &+ \frac{\hbar e^2}{4m\epsilon_0}\sum_n \frac{1}{\omega_n}|\mathbf{F}_n(\mathbf{x})|^2\psi_i(\mathbf{x}) + \frac{e^2\hbar^2}{8m^2\epsilon_0}\sum\limits_{n=N_{\sigma}+1}^{\infty}\sum\limits_{q=1}^{N_p} \frac{\int d^3y~\mathbf{F}^*_q(\mathbf{y})\cdot\mathbf{j}_{ni}(\mathbf{y})}{\omega_q(\omega_{in}-\lambda_q)}\left( \mathbf{F}_q(\mathbf{x})\cdot\nabla\psi_n(\mathbf{x}) + \nabla\cdot(\mathbf{F}_q(\mathbf{x})\psi_n(\mathbf{x}))\right)  \nonumber \\ &= E_i\psi_i(\mathbf{x}).
 \end{align}
 
 Setting the derivative with respect to photonic modes zero gives the equation:
@@ -110,9 +110,9 @@ Setting the derivative with respect to photonic modes zero gives the equation:
 \end{equation}
 
 And setting the derivative with respect to the photonic frequencies to zero gives the equation:
-\begin{equation}
-\frac{\hbar}{4}\left(\int d^3x ~|\mathbf{F}_q(\mathbf{x})|^2 - \frac{c^2}{\omega_q^2}\mathbf{F}^*_q(\mathbf{x})\cdot\nabla\times\nabla\times\mathbf{F}_q(\mathbf{x}) \right) - \frac{e^2\hbar}{4m\epsilon_0\omega_q^2}\int d^3x~\sum\limits_{m=1}^{N_{\sigma}} |\psi_m(\mathbf{x})|^2 -\frac{e^2\hbar^2}{8m^2\epsilon_0}\sum\limits_{n=N_{\sigma}+1}^{\infty}\sum\limits_{m=1}^{N_{\sigma}}\frac{\Big|\int d^3x~\mathbf{F}_q(\mathbf{x})\cdot\mathbf{j}_{mn}(\mathbf{x})\Big|^2}{\omega_q^2(\omega_{mn}-\lambda_q)}=  0 
-\end{equation}
+\begin{align}
+&\frac{\hbar}{4}\left(\int d^3x ~|\mathbf{F}_q(\mathbf{x})|^2 - \frac{c^2}{\omega_q^2}\mathbf{F}^*_q(\mathbf{x})\cdot\nabla\times\nabla\times\mathbf{F}_q(\mathbf{x}) \right) - \frac{e^2\hbar}{4m\epsilon_0\omega_q^2}\int d^3x~\sum\limits_{m=1}^{N_{\sigma}} |\psi_m(\mathbf{x})|^2 \nonumber \\ &-\frac{e^2\hbar^2}{8m^2\epsilon_0}\sum\limits_{n=N_{\sigma}+1}^{\infty}\sum\limits_{m=1}^{N_{\sigma}}\frac{\Big|\int d^3x~\mathbf{F}_q(\mathbf{x})\cdot\mathbf{j}_{mn}(\mathbf{x})\Big|^2}{\omega_q^2(\omega_{mn}-\lambda_q)}=  0 
+\end{align}
 Performing the operation $\frac{1}{\omega_q}\int d^3x \mathbf{F}_q^*(\mathbf{x})  \cdot$ on Equation (6), and adding the result to Equation (7), gives the result $\lambda_q = \omega_q$, just as before $\delta E$ was introduced. Using this key simplification, along with the definition of the spatially-dependent plasma frequency as $\omega_p^2(\mathbf{x}) = \frac{e^2}{m\epsilon_0}\sum\limits_{m=1}^{N_{\sigma}}|\psi_m(\mathbf{x})|^2$, we have that Equation (7) of the main text is generalized to:
 \begin{equation}
 \left( \nabla\times\nabla\times - \left(1-\frac{\omega_p^2(\mathbf{x})}{\omega_q^2} \right)\right)\mathbf{F}_q(\mathbf{x}) = -\frac{e^2\hbar}{2m^2\epsilon_0c^2}\sum\limits_{n=N_{\sigma}+1}^{\infty}\sum\limits_{m=1}^{N_{\sigma}} \frac{\int d^3y~\mathbf{F}_q(\mathbf{y})\cdot\mathbf{j}_{mn}(\mathbf{y})}{\omega_{mn}-\omega_{q}}\mathbf{j}_{nm}(\mathbf{x}).
@@ -123,10 +123,10 @@ Performing the operation $\frac{1}{\omega_q}\int d^3x \mathbf{F}_q^*(\mathbf{x})
 
 In this section, we provide some additional details on the one-dimensional cavity QED model considered in the main text. Given the Hamiltonian of Equation (9) in the main text describing the coupling of an emitter to a one-dimensional cavity, with the matter being described by the site model of Equations (10) and (11) of the main text, the expectation value of the Hamiltonian according to the ansatz of Equation (4) in the main text is given by
 \begin{equation}
-\langle \Psi | H | \Psi \rangle &= \langle \tilde{g} |H_{\text{matter}} | \tilde{g}\rangle + \frac{\hbar}{4}\int dz ~\sum\limits_{n=1}^{\infty}\left(\omega_n|F_n|^2 - \frac{c^2}{\omega_n}F_n^*\partial_z^2F_n\right) + \frac{\hbar q^2}{4m\epsilon_0\omega_n}\sum\limits_{n=1}^{\infty} \int dz~\delta(z-d)|F_n|^2
+\langle \Psi | H | \Psi \rangle = \langle \tilde{g} |H_{\text{matter}} | \tilde{g}\rangle + \frac{\hbar}{4}\int dz ~\sum\limits_{n=1}^{\infty}\left(\omega_n|F_n|^2 - \frac{c^2}{\omega_n}F_n^*\partial_z^2F_n\right) + \frac{\hbar q^2}{4m\epsilon_0\omega_n}\sum\limits_{n=1}^{\infty} \int dz~\delta(z-d)|F_n|^2
 \end{equation}
 In this equation, $|\tilde{g}\rangle$ is the ground state of the effective matter part of the Hamiltonian, and $H_{\mathrm{matter}}$ is the Hamiltonian of Equation (10) of the main text.  We impose constraints of matter normalization and photon mode normalization by defining a Lagrange function 
-\begin{align}\label{eq:lagrange}
+\begin{equation}\label{eq:lagrange}
 \mathcal{L}(|\tilde{g}\rangle, \langle \tilde{g}|,\epsilon, \{F_n, F_n^*, \omega_n, \lambda_n\}) \equiv \langle \Psi | H | \Psi \rangle - \epsilon(\langle \tilde{g}|\tilde{g}\rangle-1)-\sum\limits_{n=1}^{\infty}\frac{\hbar\lambda_n}{2}\left( \int dz~|F_n|^2-1\right).
 \end{equation} 
 To find the ground state, we minimize the Lagrange function with respect to the matter orbital $|\tilde{g}\rangle$ and with respect to the mode functions $F_n$. The minimization with respect to the matter leads to the trivial equation $H_{\text{matter}} |\tilde{g}\rangle = \epsilon|\tilde{g}\rangle$ which leaves the effective matter ground state as simply the ground state of $H_{\text{matter}}$. On the other hand, the minimization with respect to the photon mode functions leads to  the equation
@@ -160,7 +160,7 @@ is met. To ensure that the modes are normalized according to the constraint, we 
 \begin{equation}\label{eq:mode_normalization}
 N_n = 2\sqrt{\frac{1}{\frac{c}{\omega_n}\left(\frac{\omega_nL}{c}-\sin\left(\frac{\omega_nL}{c}\right) \right)\left(1+\frac{\sin^2\left(\frac{\omega_nd}{c}\right)}{\sin^2\left(\frac{\omega_n(L-d)}{c}\right)} \right)}}.
 \end{equation}
-The condition of Equation \ref{eq:mode_transcendental} determines the resonance frequencies of the photon quasiparticle modes. \Jadd{(put eq.12-14 to SI?)}
+The condition of Equation \ref{eq:mode_transcendental} determines the resonance frequencies of the photon quasiparticle modes. 
 
 \subsection{Model parameters for Figure 2}
 
@@ -171,7 +171,7 @@ Here, we note the parameters used in Fig. 2.
 \item{The area of the cavity in the transverse direction was taken to be 100 nm$^2$.}
 \item{The maximum number of cavity modes retained in the calculations was 100. Our results were converged with respect to the number of cavity modes.}
 \item{In the numerical diagonalization results (red lines of Fig. 2 of the main text), the Fock space was truncated such that the number of photons retained was no more than four. For the largest couplings plotted in Fig. 2, this was sufficient. But for higher couplings, more photons in the numerical diagonalization are needed. For four photons and 100 cavity modes coupled to a four-level system, the dimension of the Hilbert space is $4\times 10^8$. }
-\item{The largest couplings plotted in Fig. 2 correspond to either a single emitter with a charge of $200e$, or an ensemble of emitters (as is the case in many ultra-strong coupling experiments) in which there are 40,000 emitters in the cavity. }
+\item{The largest couplings plotted in Fig. 2 correspond to either a single emitter with a charge of $200e$, or an ensemble of emitters (as is the case in many ultra-strong coupling experiments) in which there are 40,000 emitters in the cavity. The largest couplings correspond to rather extreme coupling parameters and are shown mostly to demonstrate that our ansatz is quite accurate even in regimes of extremely high coupling.}
 \end{enumerate}
 
 \bibliographystyle{apsrev4-1}
