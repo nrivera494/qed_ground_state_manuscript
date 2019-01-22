@@ -162,9 +162,22 @@ N_n = 2\sqrt{\frac{1}{\frac{c}{\omega_n}\left(\frac{\omega_nL}{c}-\sin\left(\fra
 \end{equation}
 The condition of Equation \ref{eq:mode_transcendental} determines the resonance frequencies of the photon quasiparticle modes. 
 
-\subsection{Model parameters for Figure 2}
+\subsubsection{Perturbation theory for the one-dimensional cavity model}
 
-Here, we note the parameters used in Fig. 2.
+As discussed in the main text, the variational energies, as well as the energies from numerical diagonalization, are compared against the energies calculated from perturbation theory. We provide additional details on the perturbative calculations here. What we calculate is the energy shift of a state $|a,0\rangle$, where $a$ is any matter state, and $0$ denotes the photonic vacuum, according to the perturbation Hamiltonian $\frac{q}{m}Ap + \frac{q^2}{2m}A^2$, where $p$ is the momentum operator for the matter defined in the main text, and $A$ is the vector potential operator of the one-dimensional cavity in the absence of the matter. In particular, $A(z) = \sum_n\sqrt{\frac{\hbar}{\epsilon_0\omega_n L}}\sin\left(\frac{n\pi z}{L} \right) \left(a_n+a^{\dagger}_n\right)$, with $L$ the length of the cavity and $\omega_n = \frac{n\pi c}{L}$. Upon inspection, it is clear the the $A^2$ term leads to an energy shift at first-order in perturbation theory, while the $A\dot p$ term leads to an energy shift at second-order in perturbation theory. A straightforward application of perturbation theory leads to the following first-order energy shift from the $A^2$ term:
+\begin{equation}
+\delta E_a = \frac{q^2}{2m}\sum\limits_{n=1}^{N_p} \frac{\hbar}{\epsilon_0\omega_n L}\sin^2\left(\frac{n\pi z}{L}\right),
+\end{equation}
+where $z$ is the location of the matter in the cavity, and $N_p$ is the maximum photon number retained. Note that this value is dependent on the maximum photon number (although somewhat weakly) retained due to the logarithmically diverging nature of the sum, and so to compare variational, numerical, and perturbative calculations, the same number of modes are retained in each. A similarly straightforward application of perturbation theory leads to the energy shift coming from the $A\dot p$ term being given by:
+\begin{equation}
+\delta E_a = \frac{q^2}{m^2}\sum\limits_{b\neq a}\sum\limits_{n=1}^{N_p} \frac{\hbar}{\epsilon_0\omega_n L} \frac{|p_{ba}|^2\sin^2\left(\frac{n\pi z}{L} \right)}{\hbar(\omega_a - \omega_b - \omega_n)},
+\end{equation}
+where $b$ denotes a matter state different from $a$, and $p_{ba} = \langle b|p|a\rangle$.
+
+\subsection{Model parameters for Figure 2 and details of numerical diagonalization}
+
+Here, we note the parameters used in Fig. 2, as well as some details regarding the numerical diagonalization used to assess the validity of the variational approach advanced in the main text.
+
 \begin{enumerate}
 \item{The hopping matrix elements $t$ were taken to be 0.25 eV for the two-, three-, and four-level systems. Meanwhile, the on-site energies were taken to be equal on all sites in the two-, three-, and four-level systems.}
 \item{The cavity length was taken to be 1 micron.}
@@ -173,6 +186,8 @@ Here, we note the parameters used in Fig. 2.
 \item{In the numerical diagonalization results (red lines of Fig. 2 of the main text), the Fock space was truncated such that the number of photons retained was no more than four. For the largest couplings plotted in Fig. 2, this was sufficient. But for higher couplings, more photons in the numerical diagonalization are needed. For four photons and 100 cavity modes coupled to a four-level system, the dimension of the Hilbert space is  $4\times \left( 1 + 100 + 5050 + 171,700 + 4,421,275 \right) = 18,392,504$. The four terms in the parentheses correspond to the dimension of the properly symmetrized zero-, one-, two-, three-, and four-photon Hilbert spaces respectively. Also see Ref.~\cite{flick2017} for more details on the exact numerical diagonalization methods for light-matter coupled problems.}
 \item{The largest couplings plotted in Fig. 2 correspond to either a single emitter with a charge of $200e$, or an ensemble of emitters (as is the case in many ultra-strong coupling experiments) in which there are 40,000 emitters in the cavity. The largest couplings correspond to rather extreme coupling parameters and are shown mostly to demonstrate that our ansatz is quite accurate even in regimes of extremely high coupling.}
 \end{enumerate}
+
+Regarding the numerical diagonalization, we numerically implement the Hamiltonian of Eq. (9) of the main text by building the matter operators ($H_0$ and $p$ as defined in the main text) in the basis of states corresponding to the tensor product of any matter state, and any photon state having four photons or less . Details regarding the ordering convention for the properly symmetrized multi-photon states are provided in Ref.~ \cite{flick2017} for example. Photon operators ($a$, $a^{\dagger}$) are constructed in this basis, and used to construct field operators such as $A$ in the basis of bare cavity modes (the usual sine modes). In particular, $A(z) = \sum_n\sqrt{\frac{\hbar}{\epsilon_0\omega_n L}}\sin\left(\frac{n\pi z}{L} \right) \left(a_n+a^{\dagger}_n\right)$, with $L$ the length of the cavity and $\omega_n = \frac{n\pi c}{L}$. Diagonalization is performed using standard sparse eigendecomposition routines (such as those implemented in MATLAB).
 
 \bibliographystyle{apsrev4-1}
 \bibliography{references}
