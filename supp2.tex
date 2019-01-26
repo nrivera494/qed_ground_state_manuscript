@@ -164,7 +164,7 @@ The condition of Equation \ref{eq:mode_transcendental} determines the resonance 
 
 \subsubsection{Perturbation theory for the one-dimensional cavity model}
 
-As discussed in the main text, the variational energies, as well as the energies from numerical diagonalization, are compared against the energies calculated from perturbation theory. We provide additional details on the perturbative calculations here. What we calculate is the energy shift of a state $|a,0\rangle$, where $a$ is any matter state, and $0$ denotes the photonic vacuum, according to the perturbation Hamiltonian $\frac{q}{m}Ap + \frac{q^2}{2m}A^2$, where $p$ is the momentum operator for the matter defined in the main text, and $A$ is the vector potential operator of the one-dimensional cavity in the absence of the matter. In particular, $A(z) = \sum_n\sqrt{\frac{\hbar}{\epsilon_0\omega_n L}}\sin\left(\frac{n\pi z}{L} \right) \left(a_n+a^{\dagger}_n\right)$, with $L$ the length of the cavity and $\omega_n = \frac{n\pi c}{L}$. Upon inspection, it is clear the the $A^2$ term leads to an energy shift at first-order in perturbation theory, while the $A\dot p$ term leads to an energy shift at second-order in perturbation theory. A straightforward application of perturbation theory leads to the following first-order energy shift from the $A^2$ term:
+\textcolor{blue}{As discussed in the main text, the variational energies, as well as the energies from numerical diagonalization, are compared against the energies calculated from perturbation theory. We provide additional details on the perturbative calculations here. What we calculate is the energy shift of a state $|a,0\rangle$, where $a$ is any matter state, and $0$ denotes the photonic vacuum, according to the perturbation Hamiltonian $\frac{q}{m}Ap + \frac{q^2}{2m}A^2$, where $p$ is the momentum operator for the matter defined in the main text, and $A$ is the vector potential operator of the one-dimensional cavity in the absence of the matter. In particular, $A(z) = \sum_n\sqrt{\frac{\hbar}{\epsilon_0\omega_n L}}\sin\left(\frac{n\pi z}{L} \right) \left(a_n+a^{\dagger}_n\right)$, with $L$ the length of the cavity and $\omega_n = \frac{n\pi c}{L}$. Upon inspection, it is clear the the $A^2$ term leads to an energy shift at first-order in perturbation theory, while the $A\dot p$ term leads to an energy shift at second-order in perturbation theory. A straightforward application of perturbation theory leads to the following first-order energy shift from the $A^2$ term:
 \begin{equation}
 \delta E_a = \frac{q^2}{2m}\sum\limits_{n=1}^{N_p} \frac{\hbar}{\epsilon_0\omega_n L}\sin^2\left(\frac{n\pi z}{L}\right),
 \end{equation}
@@ -172,7 +172,26 @@ where $z$ is the location of the matter in the cavity, and $N_p$ is the maximum 
 \begin{equation}
 \delta E_a = \frac{q^2}{m^2}\sum\limits_{b\neq a}\sum\limits_{n=1}^{N_p} \frac{\hbar}{\epsilon_0\omega_n L} \frac{|p_{ba}|^2\sin^2\left(\frac{n\pi z}{L} \right)}{\hbar(\omega_a - \omega_b - \omega_n)},
 \end{equation}
-where $b$ denotes a matter state different from $a$, and $p_{ba} = \langle b|p|a\rangle$.
+where $b$ denotes a matter state different from $a$, and $p_{ba} = \langle b|p|a\rangle$.}
+
+\textcolor{blue}{In the main text, we also considered expectation values such as $\langle A \cdot p \rangle$ in the ground state within perturbation theory. Calculating the shift of the ground-state wavefunction at first-order in perturbation theory, we immediately find that
+\begin{equation}
+\langle Ap \rangle = \frac{2q}{m} \text{Re } \sum\limits_{b\neq a}\sum\limits_{n=1}^{N_p} \frac{1}{2\epsilon_0L}\frac{|p_{ba}|^2\sin^2\left(\frac{n\pi z}{L}\right)}{\omega_n(\omega_a-\omega_b-\omega_n)}.
+\end{equation}}
+
+\textcolor{blue}{It is also of interest to consider "field-only" observables such as the number of (virtual) photons in the ground state. Calculating the wavefunction of the ground state at first-order in perturbation theory, and calculating the probability of a photon being in the ground state, one finds that 
+\begin{equation}
+\langle N \rangle = \frac{q^2}{m^2} \sum\limits_{b\neq a}\sum\limits_{n=1}^{N_p} \frac{1}{2\hbar\epsilon_0L}\frac{|p_{ba}|^2\sin^2\left(\frac{n\pi z}{L}\right)}{\omega_n(\omega_a-\omega_b-\omega_n)^2}.
+\end{equation}
+In Fig. S1, we compare the expectation value of the number of photons calculated variationally, perturbatively, and with exact diagonalization. Unlike all other cases shown in this work (energy and $\langle A\cdot p \rangle$, the number of photons does not agree between variational and exact diagonalization. However, this behavior does not reflect any inconsistency with the variational method, but is instead a feature which is to be expected. In particular, the physics of the ansatz of Eq. 4 of the main text is that a complicated ground state which has many virtual photons (see numerical diagonalization result) in it should be physically equivalent to a ground state with nearly no virtual photons (see variational result), but with different modes and frequencies. In other words, the reason the number of virtual photons differs is simply because they are being counted in the basis of "interacting modes" shown in Fig. 2b of the main text.   That said, our variational theory does not give a prescription to translate the interacting mode operators to the bare mode operators.}
+
+\begin{figure}[t]
+\includegraphics[width=6cm]{FigureS1.pdf}
+\caption{\textcolor{blue}{\textbf{Number of virtual photons in the ground state calculated variationally, numerically, and through perturbation theory.} Parameters are the same as in Fig. 2 (top panel) of the main text.}}
+\label{fig:ansatz}
+\end{figure}
+
+\textcolor{blue}{We note that in all cases, when calculating these quantities in the variational theory, these expressions are still relevant, with the replacement of the bare photon frequencies and mode functions replaced by the ones that result from Eq. 7 of the main text.}
 
 \subsection{Model parameters for Figure 2 and details of numerical diagonalization}
 
@@ -187,7 +206,7 @@ Here, we note the parameters used in Fig. 2, as well as some details regarding t
 \item{The largest couplings plotted in Fig. 2 correspond to either a single emitter with a charge of $200e$, or an ensemble of emitters (as is the case in many ultra-strong coupling experiments) in which there are 40,000 emitters in the cavity. The largest couplings correspond to rather extreme coupling parameters and are shown mostly to demonstrate that our ansatz is quite accurate even in regimes of extremely high coupling.}
 \end{enumerate}
 
-Regarding the numerical diagonalization, we numerically implement the Hamiltonian of Eq. (9) of the main text by building the matter operators ($H_0$ and $p$ as defined in the main text) in the basis of states corresponding to the tensor product of any matter state, and any photon state having four photons or less . Details regarding the ordering convention for the properly symmetrized multi-photon states are provided in Ref.~ \cite{flick2017} for example. Photon operators ($a$, $a^{\dagger}$) are constructed in this basis, and used to construct field operators such as $A$ in the basis of bare cavity modes (the usual sine modes). In particular, $A(z) = \sum_n\sqrt{\frac{\hbar}{\epsilon_0\omega_n L}}\sin\left(\frac{n\pi z}{L} \right) \left(a_n+a^{\dagger}_n\right)$, with $L$ the length of the cavity and $\omega_n = \frac{n\pi c}{L}$. Diagonalization is performed using standard sparse eigendecomposition routines (such as those implemented in MATLAB).
+\textcolor{blue}{Regarding the numerical diagonalization, we numerically implement the Hamiltonian of Eq. (9) of the main text by building the matter operators ($H_0$ and $p$ as defined in the main text) in the basis of states corresponding to the tensor product of any matter state, and any photon state having four photons or less . Details regarding the ordering convention for the properly symmetrized multi-photon states are provided in Ref.~ \cite{flick2017} for example. Photon operators ($a$, $a^{\dagger}$) are constructed in this basis, and used to construct field operators such as $A$ in the basis of bare cavity modes (the usual sine modes). In particular, $A(z) = \sum_n\sqrt{\frac{\hbar}{\epsilon_0\omega_n L}}\sin\left(\frac{n\pi z}{L} \right) \left(a_n+a^{\dagger}_n\right)$, with $L$ the length of the cavity and $\omega_n = \frac{n\pi c}{L}$. Diagonalization is performed using standard sparse eigendecomposition routines (such as those implemented in MATLAB).}
 
 \bibliographystyle{apsrev4-1}
 \bibliography{references}
