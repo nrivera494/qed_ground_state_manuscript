@@ -1,0 +1,66 @@
+This is BibTeX, Version 0.99d (TeX Live 2013)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: paper4pg.aux
+The style file: apsrev4-1.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: paper4pgNotes.bib
+Database file #2: references.bib
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+merlin.mbs apsrev4-1.bst 2010-07-25 4.21a (PWD, AO, DPC) hacked
+Control: key (0) 
+Control: author (72) initials jnrlst
+Control: editor formatted (1) identically to author
+Control: production of article title (-1) disabled
+Control: page (0) single
+Control: year (1) truncated
+Control: production of eprint (0) enabled
+Warning--empty year in flick7strong
+Warning--missing journal in thomas2018
+You've used 52 entries,
+            5847 wiz_defined-function locations,
+            1972 strings with 28886 characters,
+and the built_in function-call counts, 62123 in all, are:
+= -- 3364
+> -- 2184
+< -- 435
++ -- 666
+- -- 556
+* -- 10506
+:= -- 5726
+add.period$ -- 52
+call.type$ -- 52
+change.case$ -- 211
+chr.to.int$ -- 50
+cite$ -- 54
+duplicate$ -- 5655
+empty$ -- 4489
+format.name$ -- 1263
+if$ -- 12449
+int.to.chr$ -- 3
+int.to.str$ -- 60
+missing$ -- 722
+newline$ -- 208
+num.names$ -- 153
+pop$ -- 2218
+preamble$ -- 1
+purify$ -- 258
+quote$ -- 0
+skip$ -- 2048
+stack$ -- 0
+substring$ -- 1266
+swap$ -- 5735
+text.length$ -- 278
+text.prefix$ -- 0
+top$ -- 8
+type$ -- 847
+warning$ -- 2
+while$ -- 145
+width$ -- 0
+write$ -- 459
+(There were 2 warnings)
